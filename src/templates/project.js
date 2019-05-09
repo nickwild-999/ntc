@@ -78,8 +78,11 @@ export const pageQuery = graphql`
       content
       date(formatString: "DD MMMM, YYYY")
       acf {
-      video_url 
+        video_url 
       }
+      featured_media {
+        source_url
+    } 
     }
   }
 `

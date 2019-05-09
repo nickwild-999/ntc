@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import {graphql } from 'gatsby'
 import ReactPlayer from 'react-player'
 import { Col, Row, Card, Modal, Button } from 'antd'
 import 'antd/lib/modal/style/css';
@@ -38,7 +38,7 @@ export default class ArchivePage extends React.Component {
   }
 
   render() {
-    console.log(this.props.projects[0].node.fimg_url)
+    //console.log(this.props.projects[1].node)
     const { projects, title } = this.props
 
     return (
@@ -51,24 +51,26 @@ export default class ArchivePage extends React.Component {
           <Row type="flex" gutter={16}>
             {projects.map(({ node: project }) => (
               <Col xs={24} sm={24} md={12} lg={8} xl={8} key={project.id}>
+                 
+                {/* add clickable div in here but check why the moadal functions dont work*/}
                 <Card 
+                //hoverable //make this clickable work better
                 title={project.title}
                 style={{backgroundColor: 'rgba(255, 255, 255, 0.0)'}}
                 headStyle={{backgroundColor: '#812E82', color:'white'}}
-                bodyStyle={{backgroundColor: '255, 255, 255, 0.0)'}}
-                >
-                  <div onClick={this.showModal} style={{ cursor: 'pointer' }}>
-                  {project.fimg_url.source_url.length==0 
+                bodyStyle={{backgroundColor: '255, 255, 255, 0.0)'}}    
+                cover={  project.featured_media==null 
                     ?
                     <img src={`https://img.youtube.com/vi/${project.acf.video_url.split('=')[1]}/mqdefault.jpg`} alt="Test" ></img>
                     :
-                    <img src={project.fimg_url.source_url} alt="Test" ></img>}
-
+                    <img src={project.featured_media.source_url} alt="Test" ></img>}  
+                  >
+                <div onClick={this.showModal} style={{ cursor: 'pointer' }}> 
                     <small>
                       <p>{project.project_categories[0].name}</p>
                       <p>{project.date}</p>
                     </small>
-                  </div>
+                </div>
                   <Modal
                     title={project.title}
                     visible={this.state.visible}
@@ -81,6 +83,7 @@ export default class ArchivePage extends React.Component {
                     {project.content}
                   </Modal>
                 </Card>
+                
               </Col>
             ))}
           </Row>
@@ -108,8 +111,8 @@ export const pageQuery = graphql`
     project_categories {
       name
     }
-    fimg_url {
+    featured_media {
       source_url
-    }
+    } 
   }
 `
