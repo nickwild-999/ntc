@@ -277,3 +277,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.sourceNodes = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    
+  type AcfVideoUrl {
+    video_url:String
+  }
+  
+  type wordpress__acf_project implements Node {
+      acf: AcfVideoUrl
+    }  
+
+  `
+  createTypes(typeDefs)
+}
+
