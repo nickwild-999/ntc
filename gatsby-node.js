@@ -9,6 +9,7 @@ const getOnlyPublished = edges =>
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
+  // Create Pages
   return graphql(`
     {
       allWordpressPage {
@@ -51,8 +52,9 @@ exports.createPages = ({ actions, graphql }) => {
         })
       })
     })
-    .then(() => {
-      return graphql(`
+
+    // create posts
+    .then(() => graphql(`
         {
           allWordpressPost {
             edges {
@@ -64,8 +66,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
         }
-      `)
-    })
+      `))
     .then(result => {
       if (result.errors) {
         result.errors.forEach(e => console.error(e.toString()))
@@ -103,8 +104,65 @@ exports.createPages = ({ actions, graphql }) => {
         component: blogTemplate,
       })
     })
-    .then(() => {
-      return graphql(`
+
+// projects now 
+.then(() => graphql(`
+{
+  allWordpressWpProject {
+    edges {
+      node {
+        id
+        slug
+        status
+      }
+    }
+  }
+}
+`))
+.then(result => {
+  if (result.errors) {
+    result.errors.forEach(e => console.error(e.toString()))
+    return Promise.reject(result.errors)
+  }
+
+  const projectTemplate = path.resolve(`./src/templates/project.js`)
+  const projectListTemplate = path.resolve(`./src/templates/projectarchive.js`)
+
+  // In production builds, filter for only published posts.
+  const allProjects = result.data.allWordpressWpProject.edges
+  const projects =
+    process.env.NODE_ENV === 'production'
+      ? getOnlyPublished(allProjects)
+      : allProjects
+
+  // Iterate over the array of projects
+  _.each(projects, ({ node: project }) => {
+    // Create the Gatsby page for each WordPress project
+    createPage({
+      path: `/projects/${project.slug}/`,
+      component: projectTemplate,
+      context: {
+        id: project.id,
+      },
+    })
+  })
+
+
+  // Create a paginated list, e.g., /, /page/2, /page/3
+  paginate({
+    createPage,
+    items: projects,
+    itemsPerPage: 10,
+    pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? `/projects` : `/projects/page`),
+    component: projectListTemplate,
+  })
+
+})
+
+
+
+    // Create Individual Category Pages
+    .then(() => graphql(`
         {
           allWordpressCategory(filter: { count: { gt: 0 } }) {
             edges {
@@ -116,8 +174,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
         }
-      `)
-    })
+      `))
     .then(result => {
       if (result.errors) {
         result.errors.forEach(e => console.error(e.toString()))
@@ -138,8 +195,9 @@ exports.createPages = ({ actions, graphql }) => {
         })
       })
     })
-    .then(() => {
-      return graphql(`
+
+    // Create Tag Pages
+    .then(() => graphql(`
         {
           allWordpressTag(filter: { count: { gt: 0 } }) {
             edges {
@@ -151,8 +209,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
         }
-      `)
-    })
+      `))
 
     .then(result => {
       if (result.errors) {
@@ -174,8 +231,9 @@ exports.createPages = ({ actions, graphql }) => {
         })
       })
     })
-    .then(() => {
-      return graphql(`
+
+    // Create User Pages
+    .then(() => graphql(`
         {
           allWordpressWpUsers {
             edges {
@@ -186,8 +244,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
         }
-      `)
-    })
+      `))
     .then(result => {
       if (result.errors) {
         result.errors.forEach(e => console.error(e.toString()))
