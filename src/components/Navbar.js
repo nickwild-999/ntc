@@ -18,7 +18,7 @@ const Navbar = () => (
       }
     `}
     render={data => (
-      <nav className="navbar is-transparent">
+      <nav className="navbar is-dark is-spaced">
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item">

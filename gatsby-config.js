@@ -45,12 +45,13 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-antd',
     {
       // Removes unused css rules
       resolve:'gatsby-plugin-purgecss',
       options: {
         // Activates purging in gatsby develop
-        develop: true,
+        develop: false,
         // Purge only the main css file
         purgeOnly: ['/all.sass'],
       },
