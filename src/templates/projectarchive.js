@@ -6,6 +6,7 @@ import ProjectList from '../components/ProjectList'
 import Pagination from '../components/Pagination'
 
 export default class ArchivePage extends React.Component {
+
   render() {
     const { data, pageContext } = this.props
     const { edges: projects } =  data.allWordpressWpProject
@@ -32,15 +33,14 @@ ArchivePage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query ArchiveQuery($limit: Int!, $skip: Int!) {
+  query ArchiveQuery {
     allWordpressWpProject(
       sort: { fields: date, order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+          ) {
       edges {
         node {
           ...ProjectListFields
+          slug
         }
       }
     }

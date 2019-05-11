@@ -44,6 +44,18 @@ const Navbar = () => (
             >
               Projects
             </Link>
+            <Link
+              className="navbar-item"
+              to="/categories/commercial"
+            >
+              Commercials
+            </Link>
+            <Link
+              className="navbar-item"
+              to="/categories/film"
+            >
+              Films
+            </Link>
           </div>
         </div>
       </nav>

@@ -196,6 +196,41 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
+    // Create Individual Project Category Pages
+    .then(() => graphql(`
+        {
+          allWordpressWpProjectCategories(filter: { count: { gt: 0 } }) {
+            edges {
+              node {
+                id
+                name
+                slug
+              }
+            }
+          }
+        }
+      `))
+    .then(result => {
+      if (result.errors) {
+        result.errors.forEach(e => console.error(e.toString()))
+        return Promise.reject(result.errors)
+      }
+
+      const projectCategoriesTemplate = path.resolve(`./src/templates/projectcategory.js`)
+
+      // Create a Gatsby page for each WordPress Project Category
+      _.each(result.data.allWordpressWpProjectCategories.edges, ({ node: cat }) => {
+        createPage({
+          path: `/categories/${cat.slug}/`,
+          component: projectCategoriesTemplate,
+          context: {
+            name: cat.name,
+            slug: cat.slug,
+          },
+        })
+      })
+    })
+
     // Create Tag Pages
     .then(() => graphql(`
         {

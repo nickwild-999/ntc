@@ -11,7 +11,7 @@ const Category = props => {
   const { name: category } = pageContext
   const title = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } in the “${category}” category`
+  } in the “${category}” ${pageContext.slug}`
 
   return (
     <Layout>

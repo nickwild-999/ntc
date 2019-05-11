@@ -45,8 +45,8 @@ export default class ArchivePage extends React.Component {
             {projects.map(({ node: project }) => (
               <div className="column is-one-third-tablet is-one-quarter-desktop is-narrow" key={project.id}>
 
-                <div className="card large">
-                  <div className="card-header card-header-shadow">
+                <div className="card">
+                  <div className="card-header ">
                     <div className="card-header-title has-background-primary has-text-white">
                       {project.title}
                     </div>
