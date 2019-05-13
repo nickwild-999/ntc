@@ -7,7 +7,6 @@ export default () => (
     query={graphql`
         query HeadingQuery {
             myImage:imageSharp (original:{src:{regex:"/slide2/" }}){ 
-                    id
                     fluid(maxWidth: 1000) {
                         ...GatsbyImageSharpFluid
                     

@@ -41,7 +41,7 @@ export default class ArchivePage extends React.Component {
           <div className="content">
             <h1 className="has-text-weight-bold is-size-3">{title}</h1>
           </div>
-          <div className="columns">
+          <div className="columns is-multiline">
             {projects.map(({ node: project }) => (
               <div className="column is-one-third-tablet is-one-quarter-desktop is-narrow" key={project.id}>
 
