@@ -1,23 +1,40 @@
 import React from 'react';
 import { StaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
+import Carousel from 'nuka-carousel'
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-        query HeadingQuery {
-            myImage:imageSharp (original:{src:{regex:"/slide2/" }}){ 
-                    fluid(maxWidth: 1000) {
-                        ...GatsbyImageSharpFluid
-                    
+
+const LISTING_QUERY=graphql`
+query ImageListing {
+    myImages:allImageSharp (filter:{original:{src:{regex:"/slide/" }}}) { 
+            edges {
+              node {
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
+                  
                 }
+              }
             }
-        }       
-    `}
-    render={data => (
-      <div>
-        <Img fluid={data.myImage.fluid} alt="" />
+      }
+  }       
+` 
+
+
+
+const FPCarousel =() => (
+  <StaticQuery
+    query={LISTING_QUERY}
+    
+    render={({myImages}) => (
+      myImages.edges.map(edge=>(
+        <div>
+        <Img fluid={edge.node.fluid} alt="" />
       </div>
-        )}
-  />
+      ))
+     )
+      }
+    />
 )
+
+  export default FPCarousel
+  

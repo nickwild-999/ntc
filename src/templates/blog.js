@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 import Pagination from '../components/Pagination'
-import Carousel from '../components/Carousel'
+import FPCarousel from '../components/Carousel'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <Carousel />
+        <FPCarousel />
 
         <PostList posts={posts} title="Latest posts" />
         <Pagination pageContext={pageContext} pathPrefix="/" />
