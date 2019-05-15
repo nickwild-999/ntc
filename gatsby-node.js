@@ -87,7 +87,7 @@ exports.createPages = ({ actions, graphql }) => {
       _.each(posts, ({ node: post }) => {
         // Create the Gatsby page for this WordPress post
         createPage({
-          path: `/${post.slug}/`,
+          path: `blog/${post.slug}/`,
           component: postTemplate,
           context: {
             id: post.id,
@@ -100,7 +100,7 @@ exports.createPages = ({ actions, graphql }) => {
         createPage,
         items: posts,
         itemsPerPage: 10,
-        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? `/` : `/page`),
+        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? `/blog` : `/blog/page`),
         component: blogTemplate,
       })
     })

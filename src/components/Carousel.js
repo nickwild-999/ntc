@@ -4,33 +4,58 @@ import Img from 'gatsby-image'
 import Carousel from 'nuka-carousel'
 
 
-const LISTING_QUERY=graphql`
+const SLIDER_QUERY=graphql`
 query ImageListing {
-    myImages:allImageSharp (filter:{original:{src:{regex:"/slide/" }}}) { 
-            edges {
-              node {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
-                  
-                }
+    myImages:allSliderJson {
+      edges {
+        node {
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
               }
-            }
+            } 
+          }
+          title
+          text
+        }
       }
+    }
   }       
 ` 
 
+const TitleStyle = {
+    position: "absolute",
+    left: "50px",
+    top: "200px",
+    fontSize: "2.8rem",
+    fontVariantCaps: "all-small-caps",
+    color: "whitesmoke",
+    backgroundColor: "#80008090",
+    padding: "0px 30px 0px 30px"
+}
 
+const TextStyle = {
+  position: "absolute",
+  left: "50px",
+  top: "280px",
+}
 
 const FPCarousel =() => (
   <StaticQuery
-    query={LISTING_QUERY}
-    
+    query={SLIDER_QUERY}
     render={({myImages}) => (
-      myImages.edges.map(edge=>(
-        <div>
-        <Img fluid={edge.node.fluid} alt="" />
-      </div>
-      ))
+      <Carousel
+      
+      >
+              {myImages.edges.map(edge=>(
+                  <div>
+                    <Img fluid={edge.node.image.childImageSharp.fluid} />
+                    <div style={TitleStyle}>{edge.node.title}</div>
+                    <div style={TextStyle} className="is-size-4 has-text-white">{edge.node.text}</div>
+                  </div>
+              ))}
+     </Carousel>
      )
       }
     />
@@ -38,3 +63,6 @@ const FPCarousel =() => (
 
   export default FPCarousel
   
+
+  
+             
