@@ -1,0 +1,17 @@
+[
+  {
+    "image": "./slide1.jpg",
+    "title": "Title for Slide 1",
+    "text": "This is my Text for Slide 1"
+  },
+  {
+    "image": "./john_lewis.jpg",
+    "title": "Commercials",
+    "text": "John Lewis Xmas 2018"
+  },
+  {
+    "image": "./dusty_and_me.jpg",
+    "title": "Feature Films",
+    "text": "Dusty & Me"
+  }
+]
