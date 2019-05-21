@@ -1,21 +1,20 @@
 function mapProjectsToCategories({ entities }) {
-  const genres = entities.filter(e => e.__type === `wordpress__wp_project_categories`)
- 
-  return entities.map(e => {
-    if (e.__type === `wordpress__wp_project`) {
-      const hasGenres = e.genres && Array.isArray(e.genres) && e.genres.length
+  const genres = entities.filter(e => e.__type === 'wordpress__wp_project_categories');
+
+  return entities.map((e) => {
+    if (e.__type === 'wordpress__wp_project') {
+      const hasGenres = e.genres && Array.isArray(e.genres) && e.genres.length;
       // Replace genres with links to their nodes.
       if (hasGenres) {
         e.genres___NODE = e.genres.map(
-          c => genres.find(gObj => c === gObj.wordpress_id).id
-        )
-        delete e.genres
+          c => genres.find(gObj => c === gObj.wordpress_id).id,
+        );
+        delete e.genres;
       }
     }
-    return e
-  })
+    return e;
+  });
 }
-
 
 
 module.exports = {
@@ -24,18 +23,18 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/images/slider`,
         name: 'slider',
-      }
+      },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/content`,
         name: 'content',
-      }
+      },
     },
     {
       resolve: 'gatsby-source-wordpress',
@@ -62,11 +61,11 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-transformer-json',
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
@@ -79,7 +78,7 @@ module.exports = {
     },
     {
       // Removes unused css rules
-      resolve:'gatsby-plugin-purgecss',
+      resolve: 'gatsby-plugin-purgecss',
       options: {
         // Activates purging in gatsby develop
         develop: false,
@@ -89,4 +88,4 @@ module.exports = {
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
-}
+};

@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { Link, StaticQuery, graphql } from 'gatsby';
 // import github from '../img/github-icon.svg'
-import logo from '../img/logo.png'
+import logo from '../images/logo.png';
 
 const Navbar = () => (
   <StaticQuery
@@ -18,12 +18,15 @@ const Navbar = () => (
       }
     `}
     render={data => (
-      <nav className="navbar is-primary is-spaced is-fixed-top" style={{paddingTop:"8px", paddingBottom:"8px"}}>
+      <nav
+        className="navbar is-secondary is-spaced is-fixed-top"
+        style={{ paddingTop: '8px', paddingBottom: '2px' }}
+      >
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item">
               <figure className="image">
-                <img src={logo} alt="Nicci Topping Casting"  />
+                <img src={logo} alt="Nicci Topping Casting" />
               </figure>
             </Link>
           </div>
@@ -55,7 +58,8 @@ const Navbar = () => (
               to="/categories/film"
             >
               Films
-            </Link><Link
+            </Link>
+            <Link
               className="navbar-item"
               to="/blog"
             >
@@ -66,6 +70,6 @@ const Navbar = () => (
       </nav>
     )}
   />
-)
+);
 
-export default Navbar
+export default Navbar;

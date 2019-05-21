@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
 
 export default class IndexPage extends React.Component {
   render() {
-    const { posts, title } = this.props
+    const { posts, title } = this.props;
 
     return (
       <section className="section">
@@ -24,7 +24,10 @@ export default class IndexPage extends React.Component {
                 </Link>
                 <span> &bull; </span>
                 <small>
-                  {post.date} - posted by{' '}
+                  {post.date}
+                  {' '}
+- posted by
+                  {' '}
                   <Link to={`/author/${post.author.slug}`}>
                     {post.author.name}
                   </Link>
@@ -42,16 +45,18 @@ export default class IndexPage extends React.Component {
               </div>
             </div>
           ))}
+
         </div>
+
       </section>
-    )
+    );
   }
 }
 
 IndexPage.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
-}
+};
 
 export const pageQuery = graphql`
   fragment PostListFields on wordpress__POST {
@@ -68,4 +73,4 @@ export const pageQuery = graphql`
     date(formatString: "MMMM DD, YYYY")
     slug
   }
-`
+`;
