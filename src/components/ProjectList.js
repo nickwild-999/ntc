@@ -27,7 +27,13 @@ function ArchivePage(props) {
             return (
               <div className="column is-one-third-tablet is-one-quarter-desktop is-narrow" key={project.id}>
 
-                <div className="card">
+                <div
+                  className="card"
+                  onClick={() => {
+                    setProjectModal({ ...project });
+                    setIsOpen(!isOpen);
+                  }}
+                >
                   <div className="card-header ">
                     <div className="card-header-title has-background-primary has-text-white">
                       {project.title}

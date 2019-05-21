@@ -29,42 +29,49 @@ const Navbar = () => (
                 <img src={logo} alt="Nicci Topping Casting" />
               </figure>
             </Link>
+            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </a>
           </div>
-          <div className="navbar-start" />
-          <div className="navbar-end">
-            {data.allWordpressPage.edges.map(edge => (
+          <div id="navbarBasicExample" className="navbar-menu">
+            <div className="navbar-start" />
+            <div className="navbar-end">
+              {data.allWordpressPage.edges.map(edge => (
+                <Link
+                  className="navbar-item"
+                  to={edge.node.slug}
+                  key={edge.node.slug}
+                >
+                  {edge.node.title}
+                </Link>
+              ))}
               <Link
                 className="navbar-item"
-                to={edge.node.slug}
-                key={edge.node.slug}
+                to="/projects"
               >
-                {edge.node.title}
+                Projects
               </Link>
-            ))}
-            <Link
-              className="navbar-item"
-              to="/projects"
-            >
-              Projects
-            </Link>
-            <Link
-              className="navbar-item"
-              to="/categories/commercial"
-            >
-              Commercials
-            </Link>
-            <Link
-              className="navbar-item"
-              to="/categories/film"
-            >
-              Films
-            </Link>
-            <Link
-              className="navbar-item"
-              to="/blog"
-            >
-              Blog
-            </Link>
+              <Link
+                className="navbar-item"
+                to="/categories/commercial"
+              >
+                Commercials
+              </Link>
+              <Link
+                className="navbar-item"
+                to="/categories/film"
+              >
+                Films
+              </Link>
+              <Link
+                className="navbar-item"
+                to="/blog"
+              >
+                Blog
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
