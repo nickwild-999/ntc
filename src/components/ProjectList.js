@@ -29,6 +29,7 @@ function ArchivePage(props) {
 
                 <div
                   className="card"
+                  style={{ cursor: 'pointer' }}
                   onClick={() => {
                     setProjectModal({ ...project });
                     setIsOpen(!isOpen);
@@ -50,15 +51,6 @@ function ArchivePage(props) {
                   <div className="card-content">
                     <p>{project.project_categories[0].name}</p>
                     <p>{project.date}</p>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setProjectModal({ ...project });
-                        setIsOpen(!isOpen);
-                      }}
-                    >
-                      Test
-                    </button>
                   </div>
                 </div>
               </div>
