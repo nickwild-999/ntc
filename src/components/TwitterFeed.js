@@ -5,15 +5,15 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 const TwitterFeed = () => (
   <div>
     <TwitterTimelineEmbed
-              sourceType="widget"
-              screenName="niccitopping"
-              options={{ height: 400 }}
-              noFooter
-              theme="dark"
-              noHeader
-              noBorders
-              transparent
-            />
+      sourceType="widget"
+      screenName="niccitopping"
+      options={{ height: 450 }}
+      noFooter
+      theme="dark"
+      noHeader
+      noBorders
+      transparent
+    />
   </div>
 
 );
