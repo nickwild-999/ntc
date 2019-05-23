@@ -24,24 +24,24 @@ const IndexPage = () => (
     render={({ myContent }) => (
       <Layout>
         <FPCarousel />
-        <div
-          className="columns"
-          style={{ padding: '80px 140px 20px 140px' }}
-        >
-          <div className="column">
-            Picture in here
+        <section className="section">
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column is-one-third is-narrow">
+              Picture in here
+              </div>
+              <div
+                className=" column is-two-third has-text-justified front-page"
+                dangerouslySetInnerHTML={{
+                  __html: myContent.items[0].item.copy,
+                }}
+              />
+            </div>
           </div>
-          <div
-            className="column"
-            dangerouslySetInnerHTML={{
-              __html: myContent.items[0].item.copy,
-            }}
-          />
-        </div>
-
+        </section>
       </Layout>
     )
-        }
+    }
   />
 );
 export default IndexPage;

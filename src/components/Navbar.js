@@ -1,82 +1,105 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
-// import github from '../img/github-icon.svg'
 import logo from '../images/logo.png';
 
-const Navbar = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allWordpressPage(sort: { fields: wordpress_id }, limit: 5) {
-          edges {
-            node {
-              title
-              slug
-            }
-          }
+
+const Navbar = class extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+          active: false,
+          navBarActiveClass: '',
         }
       }
-    `}
-    render={data => (
-      <nav
-        className="navbar is-secondary is-spaced is-fixed-top"
-        style={{ paddingTop: '8px', paddingBottom: '2px' }}
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
-              <figure className="image">
-                <img src={logo} alt="Nicci Topping Casting" />
-              </figure>
-            </Link>
-            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-            </a>
-          </div>
-          <div id="navbarBasicExample" className="navbar-menu">
-            <div className="navbar-start" />
-            <div className="navbar-end">
-              {data.allWordpressPage.edges.map(edge => (
-                <Link
-                  className="navbar-item"
-                  to={edge.node.slug}
-                  key={edge.node.slug}
-                >
-                  {edge.node.title}
-                </Link>
-              ))}
-              <Link
-                className="navbar-item"
-                to="/projects"
-              >
-                Projects
-              </Link>
-              <Link
-                className="navbar-item"
-                to="/categories/commercial"
-              >
-                Commercials
-              </Link>
-              <Link
-                className="navbar-item"
-                to="/categories/film"
-              >
-                Films
-              </Link>
-              <Link
-                className="navbar-item"
-                to="/blog"
-              >
-                Blog
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )}
-  />
-);
+    
+      toggleHamburger = () => {
+        // toggle the active boolean in the state
+        this.setState(
+          {
+            active: !this.state.active,
+          },
+          // after state has been updated,
+          () => {
+            // set the class in state for the navbar accordingly
+            this.state.active
+              ? this.setState({
+                  navBarActiveClass: 'is-active',
+                })
+              : this.setState({
+                  navBarActiveClass: '',
+                })
+          }
+        )
+      }
 
-export default Navbar;
+      render() {
+        return (
+            <nav
+            className="navbar is-secondary is-spaced is-fixed-top"
+            style={{ paddingTop: '8px', paddingBottom: '2px' }}
+            role="navigation"
+            aria-label="main-navigation"
+            >
+            <div className="container">
+                <div className="navbar-brand">
+                    <Link to="/" className="navbar-item">
+                    <figure className="image">
+                        <img src={logo} alt="Nicci Topping Casting" />
+                    </figure>
+                    </Link>
+                    {/* Hamburger menu */}
+                    <div
+                        className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+                        data-target="mainMenu"
+                        onClick={() => this.toggleHamburger()}
+                    >
+                        <span />
+                        <span />
+                        <span />
+                    </div>
+                </div>
+                <div
+                    id="navMenu"
+                    className={`navbar-menu ${this.state.navBarActiveClass}`}
+                >
+                    <div className="navbar-end">
+                        <Link
+                        className="navbar-item"
+                        to="/"
+                        >
+                        Home
+                        </Link>
+
+                        <Link
+                        className="navbar-item"
+                        to="/projects"
+                        >
+                            Projects
+                        </Link>
+                        <Link
+                        className="navbar-item"
+                        to="/categories/commercial"
+                        >
+                            Commercials
+                        </Link>
+                        <Link
+                        className="navbar-item"
+                        to="/categories/film"
+                        >
+                            Films
+                        </Link>
+                        <Link
+                        className="navbar-item"
+                        to="/blog"
+                        >
+                            Blog
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    )}
+    }
+    export default Navbar;
+

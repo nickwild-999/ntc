@@ -1,4 +1,6 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import "~bulma/sass/utilities/mixins"
+
 
 // Config vars
 $kaldi-red: #FD461E
@@ -19,11 +21,8 @@ $footer-background-color: $black-ter
   min-height: 100vh
   flex-direction: column
 
-
 .Site-content
   flex: 1
-
-
 
 .content .taglist
   list-style: none
@@ -94,5 +93,28 @@ h2
     font-size: 0.9rem!important
 
 
+.front-page
+  +desktop
+    padding-right: 120px!important
+
+  +tablet
+    padding-right: 60px!important
+
+  p
+    +mobile
+      font-size: 0.9rem
+      padding-bottom: 10px      
+      line-height: 1.3
+    
+    +tablet
+      font-size: 1.3rem
+      padding-bottom: 10px      
+      line-height: 1.3
+
+    +desktop
+      font-size: 1.3rem
+      padding-bottom: 15px
+      line-height: 1.3
+    
 
 @import "~bulma"
