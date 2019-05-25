@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import _ from 'lodash';
+import { Html5Entities } from 'html-entities';
 import logo from '../images/logo.png';
+
 import ProjectListFields from './graphql/ProjectListFields';
+
+const htmlEntities = new Html5Entities();
+
 
 function ArchivePage(props) {
   const { projects, title } = props;
@@ -36,7 +41,7 @@ function ArchivePage(props) {
                 >
                   <div className="card-header ">
                     <div className="card-header-title has-background-primary has-text-white">
-                      {project.title}
+                      {htmlEntities.decode(project.title)}
                     </div>
                   </div>
                   <div className="card-image">

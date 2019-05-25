@@ -22,6 +22,7 @@
     "gatsby-transformer-json": "^2.1.11",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.1",
+    "html-entities": "^1.2.1",
     "lodash": "^4.17.5",
     "node-sass": "^4.9.2",
     "nuka-carousel": "^4.5.5",
