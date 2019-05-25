@@ -4,6 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import FPCarousel from '../components/Carousel';
+import MyImage from '../components/GatsbyImage';
+import logo from '../images/logo.png';
 
 
 const INDEXPAGE_QUERY = graphql`
@@ -27,8 +29,8 @@ const IndexPage = () => (
         <section className="section">
           <div className="container is-fluid">
             <div className="columns">
-              <div className="column is-one-third is-narrow">
-              Picture in here
+              <div className="column is-one-third is-narrow" style={{ paddingTop: '20px' }}>
+                <MyImage imgName="nicci_topping_portrait.jpg" />
               </div>
               <div
                 className=" column is-two-third has-text-justified front-page"

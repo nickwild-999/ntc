@@ -5,7 +5,7 @@
 // Config vars
 $kaldi-red: #FD461E
 $kaldi-red-invert: #fff
-$purple: #812E82
+$purple: #952b85
 
 $primary: $purple
 $primary-invert: $kaldi-red-invert
@@ -15,6 +15,18 @@ $custom-colors: ("secondary": ($secondary))  !default
 
 $footer-background-color: $black-ter
 
+$navbar-item-color: $white
+
+.navbar
+  background-color: var(--navbar-bg)!important
+
+  +mobile
+    --navbar-bg: #952b85!important
+
+  +desktop
+    --navbar-bg: #952b85B0!important
+
+  
 
 .Site 
   display: flex
@@ -23,6 +35,14 @@ $footer-background-color: $black-ter
 
 .Site-content
   flex: 1
+  +mobile
+    padding-top: 100px!important
+
+  +desktop
+    padding-top: 0px!important
+
+
+
 
 .content .taglist
   list-style: none
@@ -102,7 +122,7 @@ h2
 
   p
     +mobile
-      font-size: 0.9rem
+      font-size: 1.1rem
       padding-bottom: 10px      
       line-height: 1.3
     
@@ -115,6 +135,45 @@ h2
       font-size: 1.3rem
       padding-bottom: 15px
       line-height: 1.3
-    
 
+
+.carousel-title-style
+  font-variant-caps: all-small-caps!important
+  color: whitesmoke!important
+  background-color: #80008090!important
+
+  +desktop
+    position: absolute!important
+    left: 50px!important
+    top: 200px!important
+    font-size: 2.8rem!important
+    padding: 0px 30px 0px 30px!important
+
+  +tablet
+    position: absolute!important
+    left: 50px!important
+    top: 200px!important
+    font-size: 2.8rem!important
+    padding: 0px 30px 0px 30px!important
+
+  +mobile
+    position: absolute!important
+    left: 20px!important
+    top: 20px!important
+    font-size: 1rem!important
+    padding: 0px 30px 0px 30px!important
+
+.carousel-text-style
+  position: absolute
+  left: 50px
+  top: 280px  
+
+
+.media-left img
+  object-fit: cover
+  width: 80px
+  height: 80px
+
+
+  
 @import "~bulma"

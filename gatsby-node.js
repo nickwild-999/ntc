@@ -1,13 +1,12 @@
-const _ = require('lodash')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { paginate } = require('gatsby-awesome-pagination')
+const _ = require('lodash');
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
+const { paginate } = require('gatsby-awesome-pagination');
 
-const getOnlyPublished = edges =>
-  _.filter(edges, ({ node }) => node.status === 'publish')
+const getOnlyPublished = edges => _.filter(edges, ({ node }) => node.status === 'publish');
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   // Create Pages
   return graphql(`
@@ -23,23 +22,22 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `)
-    .then(result => {
+    .then((result) => {
       if (result.errors) {
-        result.errors.forEach(e => console.error(e.toString()))
-        return Promise.reject(result.errors)
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
       }
 
-      const pageTemplate = path.resolve(`./src/templates/page.js`)
+      const pageTemplate = path.resolve('./src/templates/page.js');
 
       // Only publish pages with a `status === 'publish'` in production. This
       // excludes drafts, future posts, etc. They will appear in development,
       // but not in a production build.
 
-      const allPages = result.data.allWordpressPage.edges
-      const pages =
-        process.env.NODE_ENV === 'production'
+      const allPages = result.data.allWordpressPage.edges;
+      const pages =        process.env.NODE_ENV === 'production'
           ? getOnlyPublished(allPages)
-          : allPages
+          : allPages;
 
       // Call `createPage()` once per WordPress page
       _.each(pages, ({ node: page }) => {
@@ -49,8 +47,8 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id: page.id,
           },
-        })
-      })
+        });
+      });
     })
 
     // create posts
@@ -67,21 +65,20 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       `))
-    .then(result => {
+    .then((result) => {
       if (result.errors) {
-        result.errors.forEach(e => console.error(e.toString()))
-        return Promise.reject(result.errors)
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
       }
 
-      const postTemplate = path.resolve(`./src/templates/post.js`)
-      const blogTemplate = path.resolve(`./src/templates/blog.js`)
+      const postTemplate = path.resolve('./src/templates/post.js');
+      const blogTemplate = path.resolve('./src/templates/blog.js');
 
       // In production builds, filter for only published posts.
-      const allPosts = result.data.allWordpressPost.edges
-      const posts =
-        process.env.NODE_ENV === 'production'
+      const allPosts = result.data.allWordpressPost.edges;
+      const posts =        process.env.NODE_ENV === 'production'
           ? getOnlyPublished(allPosts)
-          : allPosts
+          : allPosts;
 
       // Iterate over the array of posts
       _.each(posts, ({ node: post }) => {
@@ -92,20 +89,20 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id: post.id,
           },
-        })
-      })
+        });
+      });
 
       // Create a paginated blog, e.g., /, /page/2, /page/3
       paginate({
         createPage,
         items: posts,
         itemsPerPage: 10,
-        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? `/blog` : `/blog/page`),
+        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/blog' : '/blog/page'),
         component: blogTemplate,
-      })
+      });
     })
 
-    // projects now 
+    // projects now
     .then(() => graphql(`
 {
   allWordpressWpProject {
@@ -119,21 +116,20 @@ exports.createPages = ({ actions, graphql }) => {
   }
 }
 `))
-    .then(result => {
+    .then((result) => {
       if (result.errors) {
-        result.errors.forEach(e => console.error(e.toString()))
-        return Promise.reject(result.errors)
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
       }
 
-      const projectTemplate = path.resolve(`./src/templates/project.js`)
-      const projectListTemplate = path.resolve(`./src/templates/projectarchive.js`)
+      const projectTemplate = path.resolve('./src/templates/project.js');
+      const projectListTemplate = path.resolve('./src/templates/projectarchive.js');
 
       // In production builds, filter for only published posts.
-      const allProjects = result.data.allWordpressWpProject.edges
-      const projects =
-        process.env.NODE_ENV === 'production'
+      const allProjects = result.data.allWordpressWpProject.edges;
+      const projects =        process.env.NODE_ENV === 'production'
           ? getOnlyPublished(allProjects)
-          : allProjects
+          : allProjects;
 
       // Iterate over the array of projects
       _.each(projects, ({ node: project }) => {
@@ -144,8 +140,8 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id: project.id,
           },
-        })
-      })
+        });
+      });
 
 
       // Create a paginated list, e.g., /, /page/2, /page/3
@@ -153,12 +149,10 @@ exports.createPages = ({ actions, graphql }) => {
         createPage,
         items: projects,
         itemsPerPage: 10,
-        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? `/projects` : `/projects/page`),
+        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/projects' : '/projects/page'),
         component: projectListTemplate,
-      })
-
+      });
     })
-
 
 
     // Create Individual Category Pages
@@ -175,13 +169,13 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       `))
-    .then(result => {
+    .then((result) => {
       if (result.errors) {
-        result.errors.forEach(e => console.error(e.toString()))
-        return Promise.reject(result.errors)
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
       }
 
-      const categoriesTemplate = path.resolve(`./src/templates/category.js`)
+      const categoriesTemplate = path.resolve('./src/templates/category.js');
 
       // Create a Gatsby page for each WordPress Category
       _.each(result.data.allWordpressCategory.edges, ({ node: cat }) => {
@@ -192,8 +186,8 @@ exports.createPages = ({ actions, graphql }) => {
             name: cat.name,
             slug: cat.slug,
           },
-        })
-      })
+        });
+      });
     })
 
     // Create Individual Project Category Pages
@@ -210,13 +204,13 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       `))
-    .then(result => {
+    .then((result) => {
       if (result.errors) {
-        result.errors.forEach(e => console.error(e.toString()))
-        return Promise.reject(result.errors)
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
       }
 
-      const projectCategoriesTemplate = path.resolve(`./src/templates/projectcategory.js`)
+      const projectCategoriesTemplate = path.resolve('./src/templates/projectcategory.js');
 
       // Create a Gatsby page for each WordPress Project Category
       _.each(result.data.allWordpressWpProjectCategories.edges, ({ node: cat }) => {
@@ -227,8 +221,8 @@ exports.createPages = ({ actions, graphql }) => {
             name: cat.name,
             slug: cat.slug,
           },
-        })
-      })
+        });
+      });
     })
 
     // Create Tag Pages
@@ -246,13 +240,13 @@ exports.createPages = ({ actions, graphql }) => {
         }
       `))
 
-    .then(result => {
+    .then((result) => {
       if (result.errors) {
-        result.errors.forEach(e => console.error(e.toString()))
-        return Promise.reject(result.errors)
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
       }
 
-      const tagsTemplate = path.resolve(`./src/templates/tag.js`)
+      const tagsTemplate = path.resolve('./src/templates/tag.js');
 
       // Create a Gatsby page for each WordPress tag
       _.each(result.data.allWordpressTag.edges, ({ node: tag }) => {
@@ -263,8 +257,8 @@ exports.createPages = ({ actions, graphql }) => {
             name: tag.name,
             slug: tag.slug,
           },
-        })
-      })
+        });
+      });
     })
 
     // Create User Pages
@@ -280,13 +274,13 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       `))
-    .then(result => {
+    .then((result) => {
       if (result.errors) {
-        result.errors.forEach(e => console.error(e.toString()))
-        return Promise.reject(result.errors)
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
       }
 
-      const authorTemplate = path.resolve(`./src/templates/author.js`)
+      const authorTemplate = path.resolve('./src/templates/author.js');
 
       _.each(result.data.allWordpressWpUsers.edges, ({ node: author }) => {
         createPage({
@@ -295,26 +289,26 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id: author.id,
           },
-        })
-      })
-    })
-}
+        });
+      });
+    });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+  if (node.internal.type === 'MarkdownRemark') {
+    const value = createFilePath({ node, getNode });
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
-    })
+    });
   }
-}
+};
 
 exports.sourceNodes = ({ actions }) => {
-  const { createTypes } = actions
+  const { createTypes } = actions;
   const typeDefs = `
     
   type AcfVideoUrl {
@@ -329,7 +323,6 @@ exports.sourceNodes = ({ actions }) => {
   type wordpress__wp_project implements Node {
     fimg_url:String
   }
-  `
-  createTypes(typeDefs)
-}
-
+  `;
+  createTypes(typeDefs);
+};

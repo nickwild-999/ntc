@@ -36,7 +36,7 @@ const Navbar = class extends React.Component {
       render() {
         return (
             <nav
-            className="navbar is-secondary is-spaced is-fixed-top"
+            className="navbar is-spaced is-fixed-top"
             style={{ paddingTop: '8px', paddingBottom: '2px' }}
             role="navigation"
             aria-label="main-navigation"
@@ -50,7 +50,7 @@ const Navbar = class extends React.Component {
                     </Link>
                     {/* Hamburger menu */}
                     <div
-                        className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+                        className={`navbar-burger burger ${this.state.navBarActiveClass}    `}
                         data-target="mainMenu"
                         onClick={() => this.toggleHamburger()}
                     >
@@ -79,13 +79,13 @@ const Navbar = class extends React.Component {
                         </Link>
                         <Link
                         className="navbar-item"
-                        to="/categories/commercial"
+                        to="/categories/commercials"
                         >
                             Commercials
                         </Link>
                         <Link
                         className="navbar-item"
-                        to="/categories/film"
+                        to="/categories/feature-film"
                         >
                             Films
                         </Link>

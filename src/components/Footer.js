@@ -1,5 +1,6 @@
 import React from 'react';
 import TwitterFeed from './TwitterFeed';
+import RecentProjectList from './RecentProjectFooter';
 import logo from '../images/logo.png';
 
 const Footer = () => (
@@ -36,7 +37,7 @@ const Footer = () => (
         </div>
         <div className="column is-one-third-tablet is-one-third-desktop is-narrow">
           <h3 className="is-size-5 has-text-weight-bold">Recent Work</h3>
-          <div className="border-line"><p>recent stuff in here from project list</p></div>
+          <RecentProjectList />
         </div>
         <div className="column is-one-third-tablet is-one-third-desktop is-narrow">
           <h3 className="is-size-5 has-text-weight-bold">Recent Tweets</h3>

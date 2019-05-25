@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
 import ReactPlayer from 'react-player';
 import _ from 'lodash';
+import logo from '../images/logo.png';
+import ProjectListFields from './graphql/ProjectListFields';
 
 function ArchivePage(props) {
   const { projects, title } = props;
@@ -10,9 +11,7 @@ function ArchivePage(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [projectModal, setProjectModal] = useState({});
   const [playing, setPlaying] = useState(false);
-  console.log(projectModal.acf);
 
-  // const clearModal
 
   return (
     <section className="section">
@@ -42,10 +41,22 @@ function ArchivePage(props) {
                   </div>
                   <div className="card-image">
                     <figure className="image is-6by9">
-                      <img
-                        src={`https://img.youtube.com/vi/${project.video_url.split('=')[1]}/mqdefault.jpg`}
-                        alt="Test"
-                      />
+
+                      { project.video_url === null
+                        ? (
+
+                          <img
+                            src={logo} // replace this with default image
+                            alt="Test"
+                          />
+                        )
+                        : (
+                          <img
+                            src={`https://img.youtube.com/vi/${project.video_url.split('=')[1]}/mqdefault.jpg`}
+                            alt="Test"
+                          />
+                        )
+                    }
                     </figure>
                   </div>
                   <div className="card-content">
@@ -112,20 +123,9 @@ ArchivePage.propTypes = {
 };
 
 export const pageQuery = graphql`
-  fragment ProjectListFields on wordpress__wp_project {
-    id
-    title
-    date(formatString: "MMMM DD, YYYY")
-    slug
-    content
-    acf {
-      video_url 
+  query ProjectListingPage{
+    wordpressWpProject {
+      ...ProjectListFields
       }
-    project_categories {
-      name
-    }
-    featured_media {
-      source_url
-    } 
   }
 `;
