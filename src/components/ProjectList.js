@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
-// import _ from 'lodash';
 import { Html5Entities } from 'html-entities';
 
 import logo from '../images/logo.png';
@@ -19,9 +18,6 @@ const ProjectList = (props) => {
   return (
     <section className="section">
       <div className="container ">
-        <div className="content">
-          <h1 className="has-text-weight-bold is-size-3">{title}</h1>
-        </div>
         <div className="columns is-multiline">
           {projects.map(({ node: project }) => {
             project.video_url = project.acf.video_url;

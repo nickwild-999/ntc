@@ -18,7 +18,6 @@ const ProjectCategory = (props) => {
       <Helmet title={`${category} | ${siteTitle}`} />
       <div className="content">
         <Img fluid={imageheader.image.childImageSharp.fluid} />
-
         <h1 className="carousel-title-style">{category}</h1>
       </div>
       <ProjectList projects={projects} title={`${category}`} />

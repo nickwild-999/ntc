@@ -15,7 +15,9 @@ $custom-colors: ("secondary": ($secondary))  !default
 
 $footer-background-color: $black-ter
 
+// NAV BAR  
 $navbar-item-color: $white
+$navbar-height: 1 rem;
 
 .navbar
   background-color: var(--navbar-bg)!important
@@ -29,7 +31,33 @@ $navbar-item-color: $white
   +desktop
     --navbar-bg: #952b85B0!important
 
+.navbar-menu
+  background-color: var(--navbar-menu-bg)!important
+
+  +mobile
+    --navbar-menu-bg: #952b85!important
   
+  +tablet
+    --navbar-menu-bg: #952b85!important
+
+  +desktop
+    --navbar-menu-bg: #952b8500!important
+
+.navbar-item img 
+  +mobile
+    max-height: 3.2rem !important
+
+  +tablet
+    max-height: 3.6rem !important
+
+  +desktop
+    max-height: 4rem !important
+
+
+.navbar-burger
+  padding-right:60px!important
+
+// main images etc
 
 .Site 
   display: flex
@@ -39,10 +67,15 @@ $navbar-item-color: $white
 .Site-content
   flex: 1
   +mobile
-    padding-top: 100px!important
+    padding-top: 80px!important
 
-  +desktop
+  +tablet
+    padding-top: 80px!important
+
+  +widescreen
     padding-top: 0px!important
+
+
 
 
 
@@ -88,8 +121,7 @@ $navbar-item-color: $white
 .card-header-title
      border-radius: 8px 8px 0px 0px
 
-.navbar-item img 
-    max-height: none !important
+
 
 h2
   font-size: 2rem!important
@@ -150,14 +182,14 @@ h2
     left: 50px!important
     top: 200px!important
     font-size: 2.8rem!important
-    padding: 0px 30px 0px 30px!important
+    padding: 0px 30px 0px 40px!important
 
   +tablet
     position: absolute!important
     left: 50px!important
     top: 200px!important
     font-size: 2.8rem!important
-    padding: 0px 30px 0px 30px!important
+    padding: 0px 30px 0px 40px!important
 
   +mobile
     position: absolute!important

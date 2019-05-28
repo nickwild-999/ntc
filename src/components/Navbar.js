@@ -44,7 +44,7 @@ const Navbar = class extends React.Component {
             <div className="container">
                 <div className="navbar-brand">
                     <Link to="/" className="navbar-item">
-                    <figure className="image">
+                    <figure className="brandimage">
                         <img src={logo} alt="Nicci Topping Casting" />
                     </figure>
                     </Link>
@@ -63,7 +63,7 @@ const Navbar = class extends React.Component {
                     id="navMenu"
                     className={`navbar-menu ${this.state.navBarActiveClass}`}
                 >
-                    <div className="navbar-end">
+                    <div className="navbar-end"  >
                         <Link
                         className="navbar-item"
                         to="/"
