@@ -44,6 +44,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/images/categoryheaders`,
+        name: 'categoryheaders',
+      },
+    },
+    {
       resolve: 'gatsby-source-wordpress',
       options: {
         // The base url to your WP site.

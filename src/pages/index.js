@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import FPCarousel from '../components/Carousel';
 import MyImage from '../components/GatsbyImage';
-import logo from '../images/logo.png';
 
 
 const INDEXPAGE_QUERY = graphql`

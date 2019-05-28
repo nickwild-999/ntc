@@ -1,0 +1,10 @@
+[
+  {
+    "image": "./slide1.jpg",
+    "header_category": "commercials"
+  },
+  {
+    "image": "./slide3.jpg",
+    "header_category": "feature-films"
+  }
+]

@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
-import _ from 'lodash';
+// import _ from 'lodash';
 import { Html5Entities } from 'html-entities';
-import logo from '../images/logo.png';
 
-import ProjectListFields from './graphql/ProjectListFields';
+import logo from '../images/logo.png';
 
 const htmlEntities = new Html5Entities();
 
-
-function ArchivePage(props) {
+const ProjectList = (props) => {
   const { projects, title } = props;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -40,9 +38,10 @@ function ArchivePage(props) {
                   }}
                 >
                   <div className="card-header ">
-                    <div className="card-header-title has-background-primary has-text-white">
+                    <div className="card-header-title has-background-primary has-text-white is-text-overflow">
                       {htmlEntities.decode(project.title)}
                     </div>
+
                   </div>
                   <div className="card-image">
                     <figure className="image is-6by9">
@@ -85,7 +84,9 @@ function ArchivePage(props) {
           />
           <div className="modal-card">
             <header className="modal-card-head">
-              <p className="modal-card-title">{projectModal.title}</p>
+              <p className="modal-card-title">
+                {htmlEntities.decode(projectModal.title)}
+              </p>
               <button
                 type="button"
                 className="delete"
@@ -117,20 +118,6 @@ function ArchivePage(props) {
     </section>
 
   );
-}
-
-export default ArchivePage;
-
-
-ArchivePage.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
 };
 
-export const pageQuery = graphql`
-  query ProjectListingPage{
-    wordpressWpProject {
-      ...ProjectListFields
-      }
-  }
-`;
+export default ProjectList;

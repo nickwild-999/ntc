@@ -27,7 +27,7 @@ const RecentProjectList = () => (
   <StaticQuery
     query={FOOTER_LISTING_QUERY}
     render={({ recentProjects }) => (
-      <div>
+      <div style={{ paddingTop: '10px' }}>
         {recentProjects.edges.map(edge => (
           <div className="media" key={edge.node.id}>
             <aside className="media-left">
@@ -37,12 +37,14 @@ const RecentProjectList = () => (
               />
             </aside>
             <div className="media-content">
-              <p className="is-strong">
+              <div
+                className="project-title is-text-overflow
+                "
+                style={{ fontWeight: 'bold' }}
+              >
                 {htmlEntities.decode(edge.node.title)}
-              </p>
-              <p>
-                {edge.node.project_categories[0].name}
-              </p>
+              </div>
+
             </div>
           </div>
         ))}
