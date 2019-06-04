@@ -1,6 +1,8 @@
 import React from 'react';
 import TwitterFeed from './TwitterFeed';
 import RecentProjectList from './RecentProjectFooter';
+
+
 import logo from '../images/logo.png';
 
 const Footer = () => (
@@ -12,10 +14,47 @@ const Footer = () => (
 
           <img src={logo} alt="Nicci Topping Casting" />
           <div className="footer-text">
-            <p>Twitter: @niccitopping</p>
-            <p>Facebook: niccitoppingcasting/</p>
-            <p>Blog: niccitoppingcasting.com</p>
-            <p>Email: nicci@niccitoppingcasting.com</p>
+            <p>
+              Twitter:
+              <a
+                href="https://twitter.com/niccitopping"
+                target="_blank"
+                rel="noopener"
+              >
+                @niccitopping
+              </a>
+            </p>
+            <p>
+              Facebook:
+              <a
+                href="https://facebook.com/niccitoppingcasting/"
+                target="_blank"
+                rel="noopener"
+              >
+                niccitoppingcasting/
+              </a>
+            </p>
+            <p>
+              Blog:
+              <a
+                href="https://niccitopping.com/"
+                target="_blank"
+                rel="noopener"
+              >
+              niccitopping.com
+              </a>
+            </p>
+            <p>
+            Email:
+              <a
+                href="mailto:nicci@niccitoppingcasting.com"
+                target="_blank"
+                rel="noopener"
+              >
+              nicci@niccitoppingcasting.com
+              </a>
+            </p>
+
           </div>
           <div className="footer-text">
             <p style={{ fontWeight: 'bold', paddingTop: '12px' }}>Main Office</p>

@@ -75,14 +75,76 @@ const Navbar = class extends React.Component {
                         className="navbar-item"
                         to="/projects"
                         >
-                            Projects
+                            All Projects
                         </Link>
-                        <Link
-                        className="navbar-item"
-                        to="/categories/commercials"
-                        >
+                        
+                        <div className="navbar-item has-dropdown is-hoverable">
+                            <a className="navbar-link">
                             Commercials
-                        </Link>
+                            </a>
+                            <div className="navbar-dropdown">
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/commercials"
+                                    >
+                                        All
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/financial-services"
+                                    >
+                                        Financial Services
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/food-beverage"
+                                    >
+                                        Food & Beverage
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/games-entertainment"
+                                    >
+                                        Games & Entertainment
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/hair-fashion-beauty"
+                                    >
+                                        Hair, Fashion, Beauty
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/health"
+                                    >
+                                        Health
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/lifestyle-sport"
+                                    >
+                                        Lifestyle & Sport
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/commercials"
+                                    >
+                                        Retail
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/telecoms-technology"
+                                    >
+                                        Telecoms & Technology
+                                </Link>
+                                <Link
+                                    className="navbar-item"
+                                    to="/categories/travel"
+                                    >
+                                        Travel
+                                </Link>
+                            </div>
+                        </div>
                         <Link
                         className="navbar-item"
                         to="/categories/feature-films"

@@ -6,5 +6,45 @@
   {
     "image": "./feature-film-header.jpg",
     "header_category": "feature-films"
+  },
+  {
+    "image": "./financial-services.jpg",
+    "header_category": "financial-services"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "food-beverage"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "telecoms-technology"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "travel"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "games-entertainment"
+  },
+  {
+    "image": "./hair-fashion-beautyairmai.jpg",
+    "header_category": "hair-fashion-beauty"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "health"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "lifestyle-sport"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "feature-films"
+  },
+  {
+    "image": "./feature-film-header.jpg",
+    "header_category": "feature-films"
   }
 ]

@@ -51,6 +51,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/testimonials`,
+        name: 'testimonials',
+      },
+    },
+    {
       resolve: 'gatsby-source-wordpress',
       options: {
         // The base url to your WP site.
@@ -69,7 +76,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
-    'gatsby-plugin-antd',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
@@ -95,7 +101,7 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         // Activates purging in gatsby develop
-        develop: false,
+        develop: true,
         // Purge only the main css file
         purgeOnly: ['/all.sass'],
       },

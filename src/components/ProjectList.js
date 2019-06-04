@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import { Html5Entities } from 'html-entities';
+import { useSpring, animated } from 'react-spring';
 
 import logo from '../images/logo.png';
 
@@ -13,21 +14,28 @@ const ProjectList = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [projectModal, setProjectModal] = useState({});
   const [playing, setPlaying] = useState(false);
+  const [hasFocus, setFocus] = useState({});
+  const fade = useSpring({ opacity: isOpen ? 1 : 0 });
+  // const hover = useSpring({ transform: hasFocus ? 'scale(0.8)' : 'scale(1.0)' });
 
-
+  console.log(hasFocus);
   return (
     <section className="section">
-      <div className="container ">
+      <div className="container">
         <div className="columns is-multiline">
           {projects.map(({ node: project }) => {
             project.video_url = project.acf.video_url;
 
             return (
               <div className="column is-one-third-tablet is-one-quarter-desktop is-narrow" key={project.id}>
-
-                <div
+                <animated.div
                   className="card"
-                  style={{ cursor: 'pointer' }}
+                  onMouseEnter={() => {
+                    setFocus(project.id);
+                  }}
+                  onMouseLeave={() => {
+                    setFocus(!hasFocus);
+                  }}
                   onClick={() => {
                     setProjectModal({ ...project });
                     setIsOpen(!isOpen);
@@ -63,12 +71,12 @@ const ProjectList = (props) => {
                     <p>{project.project_categories[0].name}</p>
                     <p>{project.date}</p>
                   </div>
-                </div>
+                </animated.div>
               </div>
             );
           })}
         </div>
-        <div className={isOpen ? 'modal is-active' : 'modal '} id="myModal">
+        <animated.div className={isOpen ? 'modal is-active' : 'modal '} id="projectModal" style={fade}>
           <div
             className="modal-background"
             role="button"
@@ -109,7 +117,7 @@ const ProjectList = (props) => {
               <p>{projectModal.date}</p>
             </footer>
           </div>
-        </div>
+        </animated.div>
       </div>
     </section>
 
