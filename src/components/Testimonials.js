@@ -13,7 +13,7 @@ query Testimonials {
         node {
           image {
             childImageSharp {
-              fluid (duotone: {highlight: "#f00e2e", shadow: "#192550"}) {
+              fluid (duotone: {highlight: "#6736dd", shadow: "#10c5f8"}) {
                 ...GatsbyImageSharpFluid
               }
             } 
