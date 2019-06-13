@@ -35,9 +35,9 @@ exports.createPages = ({ actions, graphql }) => {
       // but not in a production build.
 
       const allPages = result.data.allWordpressPage.edges;
-      const pages =        process.env.NODE_ENV === 'production'
-          ? getOnlyPublished(allPages)
-          : allPages;
+      const pages = process.env.NODE_ENV === 'production'
+        ? getOnlyPublished(allPages)
+        : allPages;
 
       // Call `createPage()` once per WordPress page
       _.each(pages, ({ node: page }) => {
@@ -76,9 +76,9 @@ exports.createPages = ({ actions, graphql }) => {
 
       // In production builds, filter for only published posts.
       const allPosts = result.data.allWordpressPost.edges;
-      const posts =        process.env.NODE_ENV === 'production'
-          ? getOnlyPublished(allPosts)
-          : allPosts;
+      const posts = process.env.NODE_ENV === 'production'
+        ? getOnlyPublished(allPosts)
+        : allPosts;
 
       // Iterate over the array of posts
       _.each(posts, ({ node: post }) => {
@@ -127,9 +127,9 @@ exports.createPages = ({ actions, graphql }) => {
 
       // In production builds, filter for only published posts.
       const allProjects = result.data.allWordpressWpProject.edges;
-      const projects =        process.env.NODE_ENV === 'production'
-          ? getOnlyPublished(allProjects)
-          : allProjects;
+      const projects = process.env.NODE_ENV === 'production'
+        ? getOnlyPublished(allProjects)
+        : allProjects;
 
       // Iterate over the array of projects
       _.each(projects, ({ node: project }) => {

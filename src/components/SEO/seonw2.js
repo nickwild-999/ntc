@@ -19,7 +19,7 @@ const SEO = ({ seo }) => (
       },
       {
         property: 'og:image',
-        content: 'FIX THIS_ seo.yoast_wpseo_facebook_image.link',
+        content: seo.yoast_wpseo_facebook_image.link,
       },
       {
         property: 'og:type',
@@ -49,3 +49,45 @@ const SEO = ({ seo }) => (
 
 
 export default SEO;
+
+export const pageQuery = graphql`
+  query SEOById2($id: String!) {
+    wordpressPage(id: { eq: $id }) {
+      title
+      content
+      yoast_meta {
+        yoast_wpseo_title
+        yoast_wpseo_metadesc
+        yoast_wpseo_canonical
+        yoast_wpseo_facebook_title
+        yoast_wpseo_facebook_description
+        yoast_wpseo_facebook_image {
+          id
+          link
+        }
+        yoast_wpseo_twitter_title
+        yoast_wpseo_twitter_description
+      }
+    }
+    site {
+          siteMetadata {
+            title
+            description
+            siteUrl
+            image
+            author {
+              name
+            }
+            organization {
+              name
+              url
+              logo
+            }
+            social {
+              twitter
+              fbAppID
+            }
+          }
+          }
+  }
+`;

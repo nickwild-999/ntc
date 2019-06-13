@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO/seonw';
 
-export const PageTemplate = ({ title, content, seo }) => (
+export const PageTemplate = ({ title, content }) => (
   <section className="section section--gradient">
     <div className="container">
       <div className="columns">
@@ -17,9 +17,6 @@ export const PageTemplate = ({ title, content, seo }) => (
               className="content"
               dangerouslySetInnerHTML={{ __html: content }}
             />
-            {seo.yoast_wpseo_title}
-            {seo.yoast_wpseo_metadesc}
-
           </div>
         </div>
       </div>
@@ -63,11 +60,10 @@ SEO.propTypes = {
 
 const Page = ({ data }) => {
   const { wordpressPage: page } = data;
-
   return (
     <Layout>
       <SEO seo={page.yoast_meta} />
-      <PageTemplate title={page.title} content={page.content} seo={page.yoast_meta} />
+      <PageTemplate title={page.title} content={page.content} />
     </Layout>
   );
 };
@@ -81,21 +77,7 @@ export default Page;
 export const pageQuery = graphql`
   query PageById($id: String!) {
     wordpressPage(id: { eq: $id }) {
-      title
-      content
-      yoast_meta {
-        yoast_wpseo_title
-        yoast_wpseo_metadesc
-        yoast_wpseo_canonical
-        yoast_wpseo_facebook_title
-        yoast_wpseo_facebook_description
-        yoast_wpseo_facebook_image {
-          id
-          link
-        }
-        yoast_wpseo_twitter_title
-        yoast_wpseo_twitter_description
-      }
+      ...PageSEO
     }
     site {
           siteMetadata {
