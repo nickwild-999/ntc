@@ -19,7 +19,35 @@ function mapProjectsToCategories({ entities }) {
 
 module.exports = {
   siteMetadata: {
-    title: 'NTC- Nick Wild',
+    title: 'Nicci Topping Casting',
+    description: `
+      This is a blog theme. The description will be showed in SEO results on pages
+      without their own descriptions.
+    `,
+    siteUrl: 'https:/casting.niccitopping.com',
+    image: 'https://lengstorf.com/images/jason-lengstorf.jpg',
+    author: {
+      name: 'Nicci Topping',
+      minibio: `
+        This bio is shown at the bottom of each blog post. It supports
+        <strong>custom HTML</strong> if you’re into that sort of thing.
+      `,
+    },
+    organization: {
+      name: 'Nicci Topping Casting',
+      url: 'https:/casting.niccitopping.com',
+      logo: 'https:/casting.niccitopping.com/android-chrome-512x512.png',
+    },
+    social: {
+      twitter: '@niccitopping',
+      fbAppID: '',
+    },
+    categories: [
+      {
+        slug: 'test',
+        name: 'Test Category',
+      },
+    ],
   },
   plugins: [
     {
@@ -69,6 +97,10 @@ module.exports = {
         // Use 'Advanced Custom Fields' Wordpress plugin
         useACF: true,
         auth: {},
+        searchAndReplaceContentUrls: {
+          sourceUrl: 'http://ntc1.vivotest.co.uk',
+          replacementUrl: 'https://casting.niccitopping.com',
+        },
         // Set to true to debug endpoints on 'gatsby build'
         verboseOutput: false,
         normalizer: mapProjectsToCategories, // WTF is this again?
@@ -77,6 +109,12 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-react-helmet-canonical-urls',
+      options: {
+        siteUrl: 'https://casting.niccitopping.com',
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
     'gatsby-transformer-json',

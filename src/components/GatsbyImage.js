@@ -11,12 +11,7 @@ const MyImage = ({ imgName }) => (
             edges {
               node {
                 fluid(
-                  maxWidth: 500,
-                  duotone: {
-                    highlight: "#228B22",
-                    shadow: "#32CD32",
-                    opacity: 10,
-                    } 
+                  maxWidth: 500
                   ) {
                     ...GatsbyImageSharpFluid
                     originalName
