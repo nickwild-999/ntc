@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
+import SEO from '../components/SEO/seo'; // ADD THIS IN
 import ProjectList from '../components/ProjectList';
 
 const ProjectCategory = (props) => {
@@ -38,7 +39,8 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          ...ProjectListFields
+          ...ProjectMain
+          ...ProjectDetails
         }
       }
     }

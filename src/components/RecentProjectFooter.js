@@ -13,7 +13,8 @@ query RecentProjectQuery {
           ) {
       edges {
         node {
-          ...ProjectListFields
+          ...ProjectMain
+          ...ProjectDetails
           slug
         }
       }

@@ -1,103 +1,51 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({
-  description, lang, meta, title,
-}) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            siteUrl
-            image
-            author {
-              name
-            }
-            organization {
-              name
-              url
-              logo
-            }
-            social {
-              twitter
-              fbAppID
-            }
-          }
-        }
-      }
-    `,
-  );
 
-  const metaDescription = description || site.siteMetadata.description;
+const SEO = ({ seo }) => (
+  <Helmet
+    meta={[
+      {
+        name: 'description',
+        content: seo.yoast_wpseo_metadesc,
+      },
+      {
+        property: 'og:title',
+        content: seo.yoast_wpseo_facebook_title,
+      },
+      {
+        property: 'og:description',
+        content: seo.yoast_wpseo_facebook_description,
+      },
+      {
+        property: 'og:image',
+        content: 'FIX THIS_ seo.yoast_wpseo_facebook_image.link',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary',
+      },
+      {
+        name: 'twitter:creator',
+        content: 'PULL THIS FROM site.siteMetadata.author,', // TO CHANGE
+      },
+      {
+        name: 'twitter:title',
+        content: seo.yoast_wpseo_twitter_title,
+      },
+      {
+        name: 'twitter:description',
+        content: seo.yoast_wpseo_twitter_description,
+      },
+    ]}
+    title={seo.yoast_wpseo_title}
+  />
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata.author,
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  );
-}
+);
 
-SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  description: '',
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-};
 
 export default SEO;

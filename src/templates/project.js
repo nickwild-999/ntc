@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import ReactPlayer from 'react-player';
-import ProjectFields from '../components/graphql/ProjectFields';
+import { Html5Entities } from 'html-entities';
 
+import SEO from '../components/SEO/seo';
 import Layout from '../components/Layout';
+
+const htmlEntities = new Html5Entities();
+
 
 export const ProjectTemplate = ({
   content,
@@ -19,7 +23,8 @@ export const ProjectTemplate = ({
       <div className="columns">
         <div className="column is-7 is-offset-1">
           <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-            {title}
+            {htmlEntities.decode(title)}
+            {/* SHOULD I MOVE THE TTLE UP */}
           </h1>
           <div className="player-wrapper">
             <ReactPlayer
@@ -47,6 +52,7 @@ const Project = ({ data }) => {
   return (
     <Layout>
       <Helmet title={`${project.title} | Blog`} />
+      <SEO seo={project.yoast_meta} />
       <ProjectTemplate
         content={project.content}
         categories={project.categories}
@@ -72,17 +78,9 @@ export const pageQuery = graphql`
   
   query ProjectByID($id: String!) {
     wordpressWpProject(id: { eq: $id }) {
-      id
-      title
-      slug
-      content
-      date(formatString: "DD MMMM, YYYY")
-      acf {
-        video_url 
-      }
-      featured_media {
-        source_url
-    } 
+      ...ProjectMain
+      ...ProjectDetails
+      ...ProjectSEO
     }
   }
 `;

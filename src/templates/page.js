@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import SEO from '../components/SEO/seonw';
+import SEO from '../components/SEO/seo';
 
 export const PageTemplate = ({ title, content }) => (
   <section className="section section--gradient">
@@ -77,6 +77,8 @@ export default Page;
 export const pageQuery = graphql`
   query PageById($id: String!) {
     wordpressPage(id: { eq: $id }) {
+      title
+      content
       ...PageSEO
     }
     site {

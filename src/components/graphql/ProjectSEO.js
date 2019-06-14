@@ -3,8 +3,6 @@ import { graphql } from 'gatsby';
 
 export const ProjectSEO = graphql`
   fragment ProjectSEO on wordpress__wp_project {
-    title
-    content
     wordpress_id
     yoast_meta {
        yoast_wpseo_title

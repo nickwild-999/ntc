@@ -1,12 +1,8 @@
 import { graphql } from 'gatsby';
 
 
-export const ProjectListFields = graphql`
-  fragment ProjectListFields on wordpress__wp_project {
-    id
-    title
-    date(formatString: "MMMM DD, YYYY")
-    slug
+export const ProjectDetails = graphql`
+  fragment ProjectDetails on wordpress__wp_project {
     content
     acf {
       video_url 
