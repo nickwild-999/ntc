@@ -22,12 +22,69 @@ $footer-background-color: $black-ter
 $link: $primary
 $link-hover: $white
 
+// add gradients to menu bar  
+
+// NAV BAR  
+$navbar-item-color: $primary
+$navbar-height: 1 rem;
+
+.navbar
+  background-color: var(--navbar-bg)!important
+
+  +mobile
+    --navbar-bg: white!important
+  
+  +tablet
+    --navbar-bg: white!important
+
+  +desktop
+    // --navbar-bg: #952b85B0!important transparent
+        --navbar-bg: white!important
 
 
+.navbar-menu
+  background-color: var(--navbar-menu-bg)!important
+
+  +mobile
+    --navbar-menu-bg: #952b85!important
+  
+  +tablet
+    --navbar-menu-bg: #952b85!important
+
+  +desktop
+    --navbar-menu-bg: #952b8500!important
+
+.navbar-item img 
+  +mobile
+    max-height: 3.2rem !important
+
+  +tablet
+    max-height: 3.6rem !important
+
+  +desktop
+    max-height: 4rem !important
 
 
+.navbar-burger
+  padding-right:60px!important
 
+// main images etc
 
+.Site 
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+.Site-content
+  flex: 1
+  +mobile
+    padding-top: 80px!important
+
+  +tablet
+    padding-top: 80px!important
+
+  +desktop
+    padding-top: 80px!important
 
 .content .taglist
   list-style: none
@@ -199,10 +256,16 @@ h2
   flex-direction: 'column'
 
 .mainhero-inner
-  padding-left: 270px
-  padding-right: 270px
-  padding-top: 75px  
-  padding-bottom: 175px
+   +mobile
+    padding-left: 100px
+    padding-right: 100px
+    padding-top: 75px  
+    padding-bottom: 175px
 
+  +desktop
+    padding-left: 270px
+    padding-right: 270px
+    padding-top: 75px  
+    padding-bottom: 175px
 
 @import "~bulma"
