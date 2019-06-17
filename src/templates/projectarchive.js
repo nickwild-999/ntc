@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+
 import Layout from '../components/Layout';
 import ProjectList from '../components/ProjectList';
 import Pagination from '../components/Pagination';
+import SEO from '../components/SEO/seo'; // ADD THIS IN
+
 
 export default class ArchivePage extends React.Component {
   render() {
