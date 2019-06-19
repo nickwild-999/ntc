@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 
-import casting from '../images/hero/Casting2.svg';
-import commercials from '../images/hero/Commercials2.svg';
-import film from '../images/hero/Film2.svg';
+import casting from '../images/hero/Casting.svg';
+import commercials from '../images/hero/Commercials.svg';
+import film from '../images/hero/Film.svg';
 import isourthing from '../images/hero/IsOurThing.svg';
 
 const slides = [
@@ -36,10 +36,7 @@ const MainHero = () => {
   return (
     <div className="mainhero-wrapper">
       <div className="mainhero-inner">
-        <div style={{
-          position: 'relative', height: '100%', paddingTop: '100px', paddingBottom: '-20px',
-        }}
-        >
+        <div className="mainhero_animation-wrapper">
           {transitions.map(({ item, props, key }) => (
             <animated.div
               style={{ ...props, transform: props.x.interpolate(x => `rotateX(${x}deg)`) }}
@@ -59,11 +56,12 @@ const MainHero = () => {
             </animated.div>
           ))}
         </div>
-        <img
-          src={isourthing}
-          alt="Nicci Topping Casting - Casting Is Our Thing"
-        />
-
+        <div>
+          <img
+            src={isourthing}
+            alt="Nicci Topping Casting - Casting Is Our Thing"
+          />
+        </div>
       </div>
     </div>
 
