@@ -23,7 +23,6 @@ const IndexPage = () => (
     render={({ myContent }) => (
       <Layout>
         <section className="section">
-          <div className="container is-fluid" />
           <MainHero />
         </section>
       </Layout>

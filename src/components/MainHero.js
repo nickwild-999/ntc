@@ -1,42 +1,74 @@
-import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+import React, { useState, useEffect } from 'react';
+import { useTransition, animated, config } from 'react-spring';
 
-import casting from '../images/hero/Casting.svg';
+import casting from '../images/hero/Casting2.svg';
+import commercials from '../images/hero/Commercials2.svg';
+import film from '../images/hero/Film2.svg';
 import isourthing from '../images/hero/IsOurThing.svg';
 
-const MainHero = () => {
-  const [isToggled, setToggle] = useState(true);
+const slides = [
+  { id: 0, image: <img src={casting} alt="cast - Nicci Topping Casting - Casting Is Our Thing" /> },
+  { id: 1, image: <img src={commercials} alt="Coms - Nicci Topping Casting - Casting Is Our Thing" /> },
+  { id: 2, image: <img src={film} alt="Coms - Nicci Topping Casting - Casting Is Our Thing" /> },
 
-  const { x } = useSpring({
-    x: isToggled ? 0 : -90,
+];
+
+const MainHero = () => {
+  const [index, set] = useState(0);
+  const transitions = useTransition(slides[index], item => item.id, {
+    from: {
+      opacity: 0,
+      x: -90,
+    },
+    enter: {
+      opacity: 1,
+      x: 0,
+
+    },
+    leave: {
+      opacity: 0,
+      x: -90,
+    },
+    config: config.wobbly,
   });
 
+  useEffect(() => void setInterval(() => set(state => (state + 1) % 3), 4000), []);
   return (
     <div className="mainhero-wrapper">
       <div className="mainhero-inner">
-        <animated.div style={{
-          transform: x.interpolate(x => `rotateX(${x}deg)`),
-          delay: '2000',
+        <div style={{
+          position: 'relative', height: '100%', paddingTop: '100px', paddingBottom: '-20px',
         }}
         >
-          <img
-            src={casting}
-            alt="Nicci Topping Casting - Casting Is Our Thing"
-          />
-        </animated.div>
+          {transitions.map(({ item, props, key }) => (
+            <animated.div
+              style={{ ...props, transform: props.x.interpolate(x => `rotateX(${x}deg)`) }}
+              key={key}
+            >
+              <div style={{
+                width: '100%',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+
+              }}
+              >
+                {item.image}
+              </div>
+            </animated.div>
+          ))}
+        </div>
         <img
           src={isourthing}
           alt="Nicci Topping Casting - Casting Is Our Thing"
         />
-      </div>
-      <button onClick={() => setToggle(!isToggled)}>Toggle</button>
 
+      </div>
     </div>
 
   );
 };
-
-// const AnimatedCasting = animated.div;
 
 
 export default MainHero;
