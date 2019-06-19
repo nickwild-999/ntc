@@ -34,7 +34,9 @@ const MainHero = () => {
 
   useEffect(() => void setInterval(() => set(state => (state + 1) % 3), 4000), []);
   return (
-    <div className="mainhero-wrapper">
+    <div
+      className="mainhero-wrapper"
+    >
       <div className="mainhero-inner">
         <div className="mainhero_animation-wrapper">
           {transitions.map(({ item, props, key }) => (

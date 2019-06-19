@@ -200,26 +200,32 @@ h2
   +mobile
     padding-left: 50px
     padding-right: 50px
-    padding-top: 75px
-    height: 100px
+    padding-top: 150px
+    // height: 100px
   
 
   +tablet
     padding-left: 270px
     padding-right: 270px
-    padding-top: 75px
+    padding-top: 175px
     height: 125px
   
 
   +desktop
     padding-left: 270px
     padding-right: 270px
-    padding-top: 50px
-    height: 150px
+    padding-top: 250px
+    //height: 250px
 
 .mainhero_animation-wrapper
   position: relative
   height: 100%
+  +desktop
+    padding-bottom: 75px
+
+  +mobile
+    padding-bottom: 0px
+
 
 
 @import "~bulma"
