@@ -32,7 +32,7 @@ const MainHero = () => {
     config: config.wobbly,
   });
 
-  useEffect(() => void setInterval(() => set(state => (state + 1) % 3), 4000), []);
+  useEffect(() => void setInterval(() => set(state => (state + 1) % 3), 3200), []);
   return (
     <div
       className="mainhero-wrapper"

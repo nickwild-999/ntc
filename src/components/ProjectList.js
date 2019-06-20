@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import { Html5Entities } from 'html-entities';
 import { useSpring, animated } from 'react-spring';
 
-import logo from '../images/logo.png';
+import logo from '../images/NTC-logo.jpg';
 
 const htmlEntities = new Html5Entities();
 
@@ -18,14 +18,14 @@ const ProjectList = (props) => {
   const fade = useSpring({ opacity: isOpen ? 1 : 0 });
   // const hover = useSpring({ transform: hasFocus ? 'scale(0.8)' : 'scale(1.0)' });
 
-  console.log(hasFocus);
+  // console.log(hasFocus);
   return (
     <section className="section">
       <div className="container">
         <div className="columns is-multiline">
           {projects.map(({ node: project }) => {
             project.video_url = project.acf.video_url;
-
+            // console.log(project.featured_media);
             return (
               <div className="column is-one-third-tablet is-one-quarter-desktop is-narrow" key={project.id}>
                 <animated.div
@@ -50,17 +50,21 @@ const ProjectList = (props) => {
                   <div className="card-image">
                     <figure className="image is-6by9">
 
-                      { project.video_url === null
+                      { project.video_url !== null
                         ? (
-
                           <img
-                            src={logo} // replace this with default image
+                            src={`https://img.youtube.com/vi/${project.video_url.split('=')[1]}/mqdefault.jpg`}
                             alt="Test"
                           />
                         )
                         : (
+
                           <img
-                            src={`https://img.youtube.com/vi/${project.video_url.split('=')[1]}/mqdefault.jpg`}
+                            src={logo} // replace this with default image
+                            style={{
+                              // width: '320px',
+                              height: '180px',
+                            }}
                             alt="Test"
                           />
                         )
