@@ -6,7 +6,6 @@ import Layout from '../components/Layout';
 import MainHero from '../components/MainHero';
 import FrontPageContent from '../components/FrontPageContent';
 import FrontPageVideo from '../components/FrontPageVideo';
-import Test from '../components/test';
 
 
 const INDEXPAGE_QUERY = graphql`
