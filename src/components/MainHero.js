@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTransition, animated, config } from 'react-spring';
+import { Link, scroller } from 'react-scroll';
 
 import casting from '../images/hero/Casting.svg';
 import commercials from '../images/hero/Commercials.svg';
@@ -64,7 +65,16 @@ const MainHero = () => {
             alt="Nicci Topping Casting - Casting Is Our Thing"
           />
         </div>
+        <Link
+          activeClass="active"
+          to="showreel"
+          duration="500"
+          smooth="true"
+        >
+      More
+        </Link>
       </div>
+
     </div>
 
   );
