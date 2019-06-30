@@ -1,23 +1,14 @@
 import React from 'react';
 
-const FrontPageContent = () => (
 
-  <div className="columns is-multiline">
-    <div
-      className="column is-half-tablet is-one-quarter-desktop"
-      style={{ backgroundColor: 'blue' }}
-    >
-            blue
-    </div>
-    <div className="column is-half-tablet is-one-quarter-desktop" style={{ backgroundColor: 'red' }}>
-            red
-    </div>
-    <div className="column is-half-tablet is-one-quarter-desktop" style={{ backgroundColor: 'yellow' }}>
-            yellow
-    </div>
-    <div className="column is-half-tablet is-one-quarter-desktop" style={{ backgroundColor: 'green' }}>
-            green
-    </div>
+const FrontPageContent = () => (
+  <div className="imagegrid">
+    <div className="imagegrid-item item1">Commercials</div>
+    <div className="imagegrid-item item2">Films</div>
+    <div className="imagegrid-item item3">Music Videos</div>
+    <div className="imagegrid-item item4">Street Casting</div>
+    <div className="imagegrid-item item1">Models</div>
+    <div className="imagegrid-item item2">Summat Else</div>
   </div>
 );
 

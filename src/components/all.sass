@@ -4,7 +4,7 @@
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,700,900&display=swap');
 $family-sans-serif: 'Muli', sans-serif
 //font-family: $family-sans-serif
 
@@ -200,40 +200,34 @@ h2
     z-index: 100
 
 .mainhero-wrapper
-  height: 100vh
-  //width: 100vw
   display: flex
   flex-direction: column
-
-.mainhero-inner
+  justify-content:center
+  
   +mobile
     padding-left: 50px
     padding-right: 50px
-    padding-top: 150px
-    // height: 100px
-  
+    padding-top: 200px
 
   +tablet
     padding-left: 270px
     padding-right: 270px
-    padding-top: 175px
-    height: 125px
-  
+    padding-top: 200px  
 
   +desktop
     padding-left: 270px
     padding-right: 270px
     padding-top: 250px
-    //height: 250px
 
-.mainhero_animation-wrapper
-  position: relative
-  height: 100%
+.mainhero-inner
   +desktop
-    padding-bottom: 75px
+    padding-bottom: 70px 
+
+  +tablet
+    padding-bottom: 70px
 
   +mobile
-    padding-bottom: 0px
+    padding-bottom: 70px
 
 .front-page-text
   @include  font-size(2rem)
@@ -252,6 +246,33 @@ h2
 .showreel
   display: flex
   justify-content: center
+
+.imagegrid 
+  display: flex
+  +mobile
+    height: 550px
+
+  
+  +mobile
+    flex-direction: column
+
+.imagegrid-item
+  background-color: yellow
+  border: 2px solid goldenrod
+  height: 250px
+  +tablet
+    flex: 1 10 10px
+  +desktop
+    flex: 1 10 50px
+  &:hover
+    flex-grow: 20
+    transition: flex-grow 0.3s ease
+  +mobile
+    flex: 1 10 20px
+    
+      // transition: flex-basis 0.3s ease
+  
+
 
 
 @import "~bulma"

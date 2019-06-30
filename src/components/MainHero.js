@@ -35,47 +35,47 @@ const MainHero = () => {
 
   useEffect(() => void setInterval(() => set(state => (state + 1) % 3), 3200), []);
   return (
-    <div
-      className="mainhero-wrapper"
-    >
+    <div className="mainhero-wrapper">
       <div className="mainhero-inner">
-        <div className="mainhero_animation-wrapper">
-          {transitions.map(({ item, props, key }) => (
-            <animated.div
-              style={{ ...props, transform: props.x.interpolate(x => `rotateX(${x}deg)`) }}
-              key={key}
+        {transitions.map(({ item, props, key }) => (
+          <animated.div
+            style={{
+              ...props,
+              transform: props.x.interpolate(x => `rotateX(${x}deg)`),
+            }}
+            key={key}
+          >
+            <div style={{
+              width: '100%',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+
+            }}
             >
-              <div style={{
-                width: '100%',
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-
-              }}
-              >
-                {item.image}
-              </div>
-            </animated.div>
-          ))}
-        </div>
-        <div>
-          <img
-            src={isourthing}
-            alt="Nicci Topping Casting - Casting Is Our Thing"
-          />
-        </div>
-        <Link
-          activeClass="active"
-          to="showreel"
-          duration="500"
-          smooth="true"
-        >
-      More
-        </Link>
+              {item.image}
+            </div>
+          </animated.div>
+        ))}
       </div>
-
+      <div style={{ paddingBottom: '20px' }}>
+        <img
+          src={isourthing}
+          alt="Nicci Topping Casting - Casting Is Our Thing"
+        />
+      </div>
+      <Link
+        activeClass="active"
+        to="showreel"
+        duration="500"
+        smooth="true"
+        style={{ alignSelf: 'center' }}
+      >
+      More
+      </Link>
     </div>
+
 
   );
 };
