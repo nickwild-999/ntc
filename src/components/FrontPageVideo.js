@@ -12,7 +12,7 @@ const FrontPageVideo = () => (
     >
 
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=NtcrHsxUZXo"
+        url="https://www.youtube.com/watch?v=mNbSgMEZ_Tw"
         light
         className="react-player-fp"
       />
