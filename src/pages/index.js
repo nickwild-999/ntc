@@ -37,7 +37,7 @@ const indexmeta = [
   },
   {
     property: 'og:image',
-    content: 'opengraph image',
+    content: 'https://infallible-mcnulty-753e25.netlify.com/NTC-fb-logo3.jpg',
   },
   {
     property: 'og:type',

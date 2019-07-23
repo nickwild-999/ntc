@@ -112,7 +112,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-helmet-canonical-urls',
       options: {
-        siteUrl: 'https://casting.niccitopping.com',
+        siteUrl: 'https://infallible-mcnulty-753e25.netlify.com/',
       },
     },
     'gatsby-plugin-sass',
