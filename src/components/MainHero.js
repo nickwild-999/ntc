@@ -62,14 +62,14 @@ const MainHero = () => {
       <div style={{ paddingBottom: '20px' }}>
         <img
           src={isourthing}
-          alt="Nicci Topping Casting - Casting Is Our Thing"
+          alt="test"
         />
       </div>
       <Link
         activeClass="active"
         to="showreel"
-        duration="500"
         smooth="true"
+        duration={500}
         style={{ alignSelf: 'center' }}
       >
       More
