@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 import MainHero from '../components/MainHero';
@@ -20,11 +21,53 @@ myContent:allMarkdownRemark {
   }      
 `;
 
+
+const indexmeta = [
+  {
+    name: 'description',
+    content: 'Leading UK Casting Director working in commercials, feature film and TV. | CSA | CDA',
+  },
+  {
+    property: 'og:title',
+    content: 'Nicci Topping Casting | CDA | CSA | Leading UK Casting Director ',
+  },
+  {
+    property: 'og:description',
+    content: 'Leading UK Casting Director | CDA | CSA',
+  },
+  {
+    property: 'og:image',
+    content: 'opengraph image',
+  },
+  {
+    property: 'og:type',
+    content: 'website',
+  },
+  {
+    name: 'twitter:card',
+    content: 'summary',
+  },
+  {
+    name: 'twitter:creator',
+    content: 'PULL THIS FROM site.siteMetadata.author,', // TO CHANGE
+  },
+  {
+    name: 'twitter:title',
+    content: 'twitter_title',
+  },
+  {
+    name: 'twitter:description',
+    content: 'twitter_description',
+  },
+];
+
+
 const IndexPage = () => (
   <StaticQuery
     query={INDEXPAGE_QUERY}
     render={({ myContent }) => (
       <Layout>
+        <Helmet meta={indexmeta} />
         <section className="hero is-fullheight">
           <MainHero />
         </section>
