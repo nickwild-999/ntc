@@ -8,13 +8,19 @@ import logo from '../images/NTC-logo.jpg';
 
 const htmlEntities = new Html5Entities();
 
-const ProjectList = (props) => {
-  const { projects, title } = props;
 
+const ProjectList = (props) => {
+  const pointericon = {
+    cursor: 'pointer',
+  };
+
+  const { projects, title } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [projectModal, setProjectModal] = useState({});
   const [playing, setPlaying] = useState(false);
   const [hasFocus, setFocus] = useState({});
+  const [activePointer, setPointer] = useState(false);
+
   const fade = useSpring({ opacity: isOpen ? 1 : 0 });
   // const hover = useSpring({ transform: hasFocus ? 'scale(0.8)' : 'scale(1.0)' });
 
@@ -32,9 +38,11 @@ const ProjectList = (props) => {
                   className="card"
                   onMouseEnter={() => {
                     setFocus(project.id);
+                    setPointer(!activePointer);
                   }}
                   onMouseLeave={() => {
                     setFocus(!hasFocus);
+                    setPointer(!activePointer);
                   }}
                   onClick={() => {
                     setProjectModal({ ...project });

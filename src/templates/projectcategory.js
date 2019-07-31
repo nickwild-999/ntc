@@ -13,15 +13,25 @@ const ProjectCategory = (props) => {
   const { title: siteTitle } = data.site.siteMetadata;
   const { node: imageheader } = data.allCategoryheadersJson.edges[0];
   const { name: category, slug } = pageContext;
+  const { node: category2 } = data.allWordpressWpProjectCategories.edges[0];
 
   return (
     <Layout>
       <Helmet title={`${category} | ${siteTitle}`} />
-
-      <div className="content">
+      <div className="category-image">
         <Img fluid={imageheader.image.childImageSharp.fluid} />
-        <h1 className="carousel-title-style">{category}</h1>
       </div>
+      <div className="category-header">
+        <div className="container">
+          <div className="content">
+            <div>
+              <h1 className="category-title">{category}</h1>
+              <div className="category-description">{category2.description}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <ProjectList projects={projects} title={`${category}`} />
     </Layout>
   );
@@ -42,6 +52,7 @@ export const pageQuery = graphql`
         node {
           ...ProjectMain
           ...ProjectDetails
+          ...ProjectSEO
         }
       }
     }
@@ -57,6 +68,17 @@ export const pageQuery = graphql`
             } 
           }
         }
+      }
+    }
+    allWordpressWpProjectCategories (filter: { slug:{ eq: $slug }})  {
+      edges {
+        node {
+          id
+          name
+          description
+          slug
+          
+       }
       }
     } 
   }
