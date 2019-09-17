@@ -31,7 +31,6 @@ const ProjectList = (props) => {
         <div className="columns is-multiline">
           {projects.map(({ node: project }) => {
             project.video_url = project.acf.video_url;
-            // console.log(project.featured_media);
             return (
               <div className="column is-one-third-tablet is-one-quarter-desktop is-narrow" key={project.id}>
                 <animated.div
@@ -126,7 +125,9 @@ const ProjectList = (props) => {
               </div>
             </section>
             <footer className="modal-card-foot">
-              <p>{projectModal.date}</p>
+              <p>
+                {(typeof projectModal.project_categories !== 'undefined') ? projectModal.project_categories[0].name : 'No'}
+              </p>
             </footer>
           </div>
         </animated.div>

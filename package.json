@@ -6,6 +6,7 @@
   "dependencies": {
     "antd": "^3.20.5",
     "bulma": "^0.7.5",
+    "components": "^0.1.0",
     "gatsby": "^2.13.35",
     "gatsby-awesome-pagination": "^0.3.3",
     "gatsby-background-image": "^0.7.6",
@@ -38,6 +39,7 @@
     "react-spring": "^8.0.27",
     "react-twitter-embed": "^2.0.8",
     "rfs": "^8.0.4",
+    "styled-components": "^4.3.2",
     "uuid": "^3.2.1"
   },
   "keywords": [
@@ -56,9 +58,11 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.12.0",
+    "enzyme": "^3.10.0",
     "eslint-config-airbnb": "^17.1.1",
     "prettier": "^1.18.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "typescript": "^3.6.3"
   },
   "prettier": {
     "trailingComma": "es5",

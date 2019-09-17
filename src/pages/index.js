@@ -7,6 +7,8 @@ import Layout from '../components/Layout';
 import MainHero from '../components/MainHero';
 import FrontPageContent from '../components/FrontPageContent';
 import FrontPageVideo from '../components/FrontPageVideo';
+import Testimonials from '../components/Testimonials';
+import Directors from '../components/Directors';
 
 
 const INDEXPAGE_QUERY = graphql`
@@ -77,6 +79,12 @@ const IndexPage = () => (
           style={{ backgroundColor: '#d5cfe1', paddingTop: '150px' }}
         >
           <FrontPageVideo />
+        </section>
+        <section>
+          <Testimonials />
+        </section>
+        <section>
+          <Directors />
         </section>
         <section>
           <FrontPageContent />

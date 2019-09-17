@@ -33,6 +33,7 @@ export const ProjectTemplate = ({
             <span> Commercial</span>
 
           </div> */}
+
           <div className="player-wrapper">
             <ReactPlayer
               url={video_url}
@@ -63,9 +64,6 @@ const Project = ({ data }) => {
       <div style={{
         backgroundColor: '#9c92ac',
         height: '200px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
       }}
       >
         <svg width="100%" height="100%">
@@ -81,16 +79,26 @@ const Project = ({ data }) => {
           </defs>
           <rect x="0" y="0" width="100%" height="100%" fill="url(#stripes)" />
         </svg>
-        <h1
-          className="title is-size-3 has-text-weight-bold is-bold-light"
-          style={{ marginBottom: '0px' }}
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          position: 'absolute',
+          top: '120px',
+          left: '100px',
+          zIndex: '10',
+        }}
         >
-          {htmlEntities.decode(project.title)}
-        </h1>
-        <div style={{ marginBottom: '25px' }}>
-          {project.project_categories[0].name}
-          <span> Commercial</span>
+          <h1
+            className="title is-size-3 has-text-weight-bold "
+            style={{ marginBottom: '0px' }}
+          >
+            {htmlEntities.decode(project.title)}
+          </h1>
+          <div style={{ marginBottom: '25px', fontWeight: '700' }}>
+            {project.project_categories[0].name}
 
+          </div>
         </div>
       </div>
       <ProjectTemplate

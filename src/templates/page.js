@@ -51,7 +51,7 @@ SEO.propTypes = {
     yoast_wpseo_facebook_description: PropTypes.string,
     yoast_wpseo_facebook_image: PropTypes.shape({
       id: PropTypes.string,
-      link: PropTypes.string, 
+      link: PropTypes.string,
     }),
     yoast_wpseo_twitter_title: PropTypes.string,
     yoast_wpseo_twitter_description: PropTypes.string,
