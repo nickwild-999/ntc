@@ -36,7 +36,7 @@ const Navbar = class extends React.Component {
       render() {
         return (
             <nav
-            className="navbar is-spaced is-fixed-top"
+            className="navbar is-spaced is-fixed-top is-transparent"
             style={{ paddingTop: '8px', paddingBottom: '2px' }}
             role="navigation"
             aria-label="main-navigation"
@@ -61,9 +61,9 @@ const Navbar = class extends React.Component {
                 </div>
                 <div
                     id="navMenu"
-                    className={`navbar-menu ${this.state.navBarActiveClass}`}
+                    className={`navbar-menu is-transparent ${this.state.navBarActiveClass}`}
                 >
-                    <div className="navbar-end"  >
+                    <div className="navbar-end is-transparent"  >
                         <Link
                         className="navbar-item"
                         to="/"
@@ -127,7 +127,7 @@ const Navbar = class extends React.Component {
                                 </Link>
                                 <Link
                                     className="navbar-item"
-                                    to="/categories/commercials"
+                                    to="/categories/retail"
                                     >
                                         Retail
                                 </Link>
@@ -145,12 +145,25 @@ const Navbar = class extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        <Link
-                        className="navbar-item"
-                        to="/categories/feature-films"
-                        >
+                        <div className="navbar-item has-dropdown is-hoverable">
+                            <a className="navbar-link">
                             Films
-                        </Link>
+                            </a>
+                            <div className="navbar-dropdown">
+                                <Link
+                                className="navbar-item"
+                                to="/categories/feature-films"
+                                >
+                                    Feature Films
+                                </Link>
+                                <Link
+                                className="navbar-item"
+                                to="/categories/short-film"
+                                >
+                                    Shorts & Music Promos
+                                </Link>
+                            </div>
+                        </div>
                         <Link
                         className="navbar-item"
                         to="/blog"

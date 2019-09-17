@@ -1,6 +1,6 @@
 [
   {
-    "image": "./slide1.jpg",
+    "image": "./casting1.jpg",
     "header_category": "commercials"
   },
   {
@@ -20,7 +20,7 @@
     "header_category": "games-entertainment"
   },
   {
-    "image": "./feature-film-header.jpg",
+    "image": "./amazing-fashion.jpg",
     "header_category": "hair-fashion-beauty"
   },
   {
@@ -28,7 +28,7 @@
     "header_category": "health"
   },
   {
-    "image": "./feature-film-header.jpg",
+    "image": "./sport.jpg",
     "header_category": "lifestyle-sport"
   },
   {
@@ -40,11 +40,19 @@
     "header_category": "short-film"
   },
   {
-    "image": "./feature-film-header.jpg",
+    "image": "./telecoms.jpg",
     "header_category": "telecoms-technology"
   },
   {
     "image": "./feature-film-header.jpg",
     "header_category": "travel"
+  },
+  {
+    "image": "./casting1.jpg",
+    "header_category": "all"
+  },
+  {
+    "image": "./casting1.jpg",
+    "header_category": "project"
   }
 ]

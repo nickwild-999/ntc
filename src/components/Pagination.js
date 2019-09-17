@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 const Pagination = ({ pageContext, pathPrefix }) => {
-  const { previousPagePath, nextPagePath } = pageContext
+  const { previousPagePath, nextPagePath } = pageContext;
 
   return (
     <nav className="pagination" role="navigation">
@@ -10,7 +10,7 @@ const Pagination = ({ pageContext, pathPrefix }) => {
         {previousPagePath && (
           <div className="navbar-item">
             <Link to={previousPagePath} rel="prev">
-              Previous
+    Previous
             </Link>
           </div>
         )}
@@ -23,7 +23,7 @@ const Pagination = ({ pageContext, pathPrefix }) => {
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

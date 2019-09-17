@@ -62,7 +62,7 @@ export const pageQuery = graphql`
           header_category
           image {
             childImageSharp {
-              fluid {
+              fluid (maxWidth: 1920, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             } 
@@ -77,8 +77,7 @@ export const pageQuery = graphql`
           name
           description
           slug
-          
-       }
+        }
       }
     } 
   }

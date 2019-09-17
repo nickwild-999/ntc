@@ -7,25 +7,32 @@ import { Html5Entities } from 'html-entities';
 
 import SEO from '../components/SEO/seo';
 import Layout from '../components/Layout';
+import GatsbyImage from '../components/GatsbyImage';
 
 const htmlEntities = new Html5Entities();
-
 
 export const ProjectTemplate = ({
   content,
   title,
   date,
+  categories,
   video_url,
 
 }) => (
   <section className="section">
     <div className="container content">
       <div className="columns">
+
         <div className="column is-7 is-offset-1">
-          <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+          {/* <h1 className="title is-size-3 has-text-weight-bold is-bold-light" style={{ marginBottom: '0px' }}>
             {htmlEntities.decode(title)}
             {/* SHOULD I MOVE THE TTLE UP */}
-          </h1>
+          {/* </h1>
+          <div style={{ marginBottom: '25px' }}>
+            {categories}
+            <span> Commercial</span>
+
+          </div> */}
           <div className="player-wrapper">
             <ReactPlayer
               url={video_url}
@@ -35,7 +42,6 @@ export const ProjectTemplate = ({
             />
           </div>
           <div dangerouslySetInnerHTML={{ __html: content }} />
-          <div>{date}</div>
         </div>
       </div>
     </div>
@@ -53,9 +59,43 @@ const Project = ({ data }) => {
     <Layout>
       <Helmet title={`${project.title} | Blog`} />
       <SEO seo={project.yoast_meta} />
+      {/* <GatsbyImage imgName="feature-film-header.jpg" /> */}
+      <div style={{
+        backgroundColor: '#9c92ac',
+        height: '200px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+      }}
+      >
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="stripes" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path
+                fill="#bcb9d0"
+                fillOpacity="0.2"
+
+                d="M0 40L40 0H20L0 20M40 40V20L20 40"
+              />
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#stripes)" />
+        </svg>
+        <h1
+          className="title is-size-3 has-text-weight-bold is-bold-light"
+          style={{ marginBottom: '0px' }}
+        >
+          {htmlEntities.decode(project.title)}
+        </h1>
+        <div style={{ marginBottom: '25px' }}>
+          {project.project_categories[0].name}
+          <span> Commercial</span>
+
+        </div>
+      </div>
       <ProjectTemplate
         content={project.content}
-        categories={project.categories}
+        categories={project.project_categories[0].name}
         tags={project.tags}
         title={project.title}
         date={project.date}
