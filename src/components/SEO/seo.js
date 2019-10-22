@@ -41,8 +41,8 @@ const SEO = ({ seo, videoimage }) => (
       const myDescription = seo.yoast_wpseo_metadesc;
       const myFacebookTitle = seo.yoast_wpseo_facebook_title || myTitle;
       const myFacebookDesc = seo.yoast_wpseo_facebook_title || myDescription;
-
-      { console.log(`https://img.youtube.com/vi/${videoimage.split('=')[1]}/maxresdefault.jpg`); }
+      const myVideo = `https://img.youtube.com/vi/${videoimage.split('=')[1]}/maxresdefault.jpg`;
+      // { console.log(myVideo); }
 
       return (
         <Helmet
@@ -61,7 +61,8 @@ const SEO = ({ seo, videoimage }) => (
             },
             {
               property: 'og:image',
-              content: 'seo.yoast_wpseo_facebook_image.link',
+              // content: 'seo.yoast_wpseo_facebook_image.link',
+              content: myVideo,
             },
             {
               property: 'og:type',
