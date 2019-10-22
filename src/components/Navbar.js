@@ -137,12 +137,6 @@ const Navbar = class extends React.Component {
                                     >
                                         Telecoms & Technology
                                 </Link>
-                                <Link
-                                    className="navbar-item"
-                                    to="/categories/travel"
-                                    >
-                                        Travel
-                                </Link>
                             </div>
                         </div>
                         <div className="navbar-item has-dropdown is-hoverable">

@@ -58,9 +58,8 @@ const Project = ({ data }) => {
   const { wordpressWpProject: project } = data;
   return (
     <Layout>
-      <Helmet title={`${project.title} | Blog`} />
-      <SEO seo={project.yoast_meta} />
-      {/* <GatsbyImage imgName="feature-film-header.jpg" /> */}
+      <Helmet title={`${project.title}`} />
+      <SEO seo={project.yoast_meta} videoimage={project.acf.video_url} />
       <div style={{
         backgroundColor: '#9c92ac',
         height: '200px',

@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import ReactPlayer from 'react-player';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO/seo'; // ADD THIS IN
@@ -14,6 +15,48 @@ const ProjectCategory = (props) => {
   const { node: imageheader } = data.allCategoryheadersJson.edges[0];
   const { name: category, slug } = pageContext;
   const { node: category2 } = data.allWordpressWpProjectCategories.edges[0];
+
+  let video = '';
+  if (slug === 'commercials') {
+    video = (
+      <div
+        className="container"
+        style={{
+          paddingBottom: '20px',
+          paddingTop: '20px',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <ReactPlayer
+          url="https://vimeo.com/365292142/50ebb98ea7"
+          light
+          className="react-player-fp"
+        />
+      </div>
+    );
+  } else if (slug === 'feature-films') {
+    video = (
+      <div
+        className="container"
+        style={{
+          paddingBottom: '20px',
+          paddingTop: '20px',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <ReactPlayer
+          url="https://vimeo.com/365292665/14521dedaa"
+          light
+          className="react-player-fp"
+        />
+      </div>
+    );
+  } else {
+    video = <div />;
+  }
+
 
   return (
     <Layout>
@@ -31,6 +74,22 @@ const ProjectCategory = (props) => {
           </div>
         </div>
       </div>
+
+      {/* <div
+        className="container"
+        style={{
+          paddingBottom: '20px',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <ReactPlayer
+          url="https://vimeo.com/365292142/50ebb98ea7"
+          light
+          className="react-player-fp"
+        />
+      </div> */}
+      {video}
 
       <ProjectList projects={projects} title={`${category}`} />
     </Layout>
@@ -79,6 +138,6 @@ export const pageQuery = graphql`
           slug
         }
       }
-    } 
+    }
   }
 `;

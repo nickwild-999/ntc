@@ -12,7 +12,7 @@ const FrontPageVideo = () => (
     >
 
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=mNbSgMEZ_Tw"
+        url="https://vimeo.com/365292142/50ebb98ea7"
         light
         className="react-player-fp"
       />

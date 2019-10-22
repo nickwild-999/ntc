@@ -21,8 +21,7 @@ module.exports = {
   siteMetadata: {
     title: 'Nicci Topping Casting',
     description: `
-      This is a blog theme. The description will be showed in SEO results on pages
-      without their own descriptions.
+      Nicci Topping CDA, CSA is one of Europe's leading casting directors  
     `,
     siteUrl: 'https:/casting.niccitopping.com',
     image: 'https://lengstorf.com/images/jason-lengstorf.jpg',
