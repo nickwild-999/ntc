@@ -36,15 +36,14 @@ const SEO = ({ seo, videoimage }) => (
 
 
     render={(data) => {
-      const { image: myImage, title } = data.site.siteMetadata;
+      const { image: myImage, title, author } = data.site.siteMetadata;
       const myTitle = seo.yoast_wpseo_title || title;
       const myDescription = seo.yoast_wpseo_metadesc;
       const myFacebookTitle = seo.yoast_wpseo_facebook_title || myTitle;
       const myFacebookDesc = seo.yoast_wpseo_facebook_title || myDescription;
-      // const videoID = videoimage.split('=')[1];
-      // const myVideo = `https://img.youtube.com/vi/${videoimage.split('=')[1]}/maxresdefault.jpg`;
       const myThumbnail = (seo.yoast_wpseo_title === 'About - Nicci Topping Casting | CDA | CSA' ? myImage : `https://img.youtube.com/vi/${videoimage.split('=')[1]}/maxresdefault.jpg`);
-      // { console.log(myVideo); }
+      const myTwitterTitle = seo.yoast_wpseo_twitter_title || myTitle;
+
 
       return (
         <Helmet
@@ -63,7 +62,6 @@ const SEO = ({ seo, videoimage }) => (
             },
             {
               property: 'og:image',
-              // content: 'seo.yoast_wpseo_facebook_image.link',
               content: myThumbnail,
             },
             {
@@ -76,15 +74,19 @@ const SEO = ({ seo, videoimage }) => (
             },
             {
               name: 'twitter:creator',
-              content: 'PULL THIS FROM site.siteMetadata.author,', // TO CHANGE
+              content: author.name,
             },
             {
               name: 'twitter:title',
-              content: seo.yoast_wpseo_twitter_title,
+              content: myTwitterTitle,
             },
             {
               name: 'twitter:description',
               content: seo.yoast_wpseo_twitter_description,
+            },
+            {
+              name: 'twitter:image',
+              content: myThumbnail,
             },
           ]}
         />
