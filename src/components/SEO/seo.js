@@ -82,7 +82,7 @@ const SEO = ({ seo, videoimage }) => (
             },
             {
               name: 'twitter:description',
-              content: seo.yoast_wpseo_twitter_description,
+              content: myDescription,
             },
             {
               name: 'twitter:image',
