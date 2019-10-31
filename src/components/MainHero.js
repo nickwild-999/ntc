@@ -88,11 +88,10 @@ const MainHero = () => {
       More
       </Link> */}
       <DownArrowWrapper activeClass="active" to="showreel" smooth="true" duration={500}>
-        MORE
         <img
           src={DownArrow}
           alt="Down Arrow"
-          style={{ maxWidth: '20%', alignSelf: 'center' }}
+          style={{ maxWidth: '10%', alignSelf: 'center' }}
         />
       </DownArrowWrapper>
     </div>
