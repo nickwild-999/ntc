@@ -19,6 +19,8 @@ const slides = [
 
 
 const DownArrowWrapper = styled(Link)`
+        display: flex;
+        justify-content: center;
         align-self: center;
         color: black;
         cursor: pointer;
@@ -88,6 +90,7 @@ const MainHero = () => {
       More
       </Link> */}
       <DownArrowWrapper activeClass="active" to="showreel" smooth="true" duration={500}>
+        mroe
         <img
           src={DownArrow}
           alt="Down Arrow"
