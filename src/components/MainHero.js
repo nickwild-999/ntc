@@ -77,7 +77,7 @@ const MainHero = () => {
           alt="test"
         />
       </div>
-
+G
       <DownArrowWrapper activeClass="active" to="showreel" smooth="true" duration={500}>
         <img
           src={DownArrow}
