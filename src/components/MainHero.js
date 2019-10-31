@@ -92,7 +92,7 @@ const MainHero = () => {
         <img
           src={DownArrow}
           alt="Down Arrow"
-          style={{ maxWidth: '80%', alignSelf: 'center' }}
+          style={{ maxWidth: '20%', alignSelf: 'center' }}
         />
       </DownArrowWrapper>
     </div>
