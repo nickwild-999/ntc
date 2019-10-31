@@ -21,11 +21,9 @@ const slides = [
 const DownArrowWrapper = styled(Link)`
         display: flex;
         justify-content: center;
-        align-self: center;
         color: black;
         cursor: pointer;
         padding-bottom: 30px;
-        text-align: center;
 `;
 
 
@@ -90,11 +88,10 @@ const MainHero = () => {
       More
       </Link> */}
       <DownArrowWrapper activeClass="active" to="showreel" smooth="true" duration={500}>
-        mroe
         <img
           src={DownArrow}
           alt="Down Arrow"
-          style={{ maxWidth: '10%', alignSelf: 'center' }}
+          style={{ maxWidth: '5%' }}
         />
       </DownArrowWrapper>
     </div>
