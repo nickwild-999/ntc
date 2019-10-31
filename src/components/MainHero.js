@@ -19,9 +19,8 @@ const slides = [
 
 
 const DownArrowWrapper = styled(Link)`
-        display: flex;
-        justify-content: center;
-        color: black;
+        display: flex !important;
+        justify-content: center !important;
         cursor: pointer;
         padding-bottom: 30px;
 `;
