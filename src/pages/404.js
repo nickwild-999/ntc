@@ -1,13 +1,21 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import React from 'react';
+import styled from 'styled-components';
+
+import Layout from '../components/Layout';
+
+
+const fourWrapper = styled.div`
+padding-top:200px;
+`;
+
 
 const NotFoundPage = () => (
   <Layout>
-    <div>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </div>
+    <fourWrapper>
+      <h1>404 NOT FOUND</h1>
+      <p>Alas dear heart. That page doesn&#39;t exist... Ohhh! the sadness.</p>
+    </fourWrapper>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

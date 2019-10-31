@@ -135,7 +135,7 @@ exports.createPages = ({ actions, graphql }) => {
       _.each(projects, ({ node: project }) => {
         // Create the Gatsby page for each WordPress project
         createPage({
-          path: `/projects/${project.slug}/`,
+          path: `/project/${project.slug}/`,
           component: projectTemplate,
           context: {
             id: project.id,
