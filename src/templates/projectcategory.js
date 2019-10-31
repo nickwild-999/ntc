@@ -29,8 +29,7 @@ const ProjectCategory = (props) => {
         }}
       >
         <ReactPlayer
-          url="https://vimeo.com/365292142/50ebb98ea7"
-          light
+          url="https://vimeo.com/369889988"
           className="react-player-fp"
         />
       </div>
@@ -48,7 +47,6 @@ const ProjectCategory = (props) => {
       >
         <ReactPlayer
           url="https://vimeo.com/365292665/14521dedaa"
-          light
           className="react-player-fp"
         />
       </div>
@@ -61,6 +59,7 @@ const ProjectCategory = (props) => {
   return (
     <Layout>
       <Helmet title={`${category} | ${siteTitle}`} />
+      {/* add an seo for categories that pulls from the header image */}
       <div className="category-image">
         <Img fluid={imageheader.image.childImageSharp.fluid} />
       </div>

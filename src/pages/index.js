@@ -51,15 +51,19 @@ const indexmeta = [
   },
   {
     name: 'twitter:creator',
-    content: 'PULL THIS FROM site.siteMetadata.author,', // TO CHANGE
+    content: 'Nicci Topping',
   },
   {
     name: 'twitter:title',
-    content: 'twitter_title',
+    content: 'Nicci Topping Casting | CDA | CSA |',
   },
   {
     name: 'twitter:description',
-    content: 'twitter_description',
+    content: "Nicci Topping Casting is one of the UK's leading Casting Directors",
+  },
+  {
+    name: 'twitter:image',
+    content: 'https://infallible-mcnulty-753e25.netlify.com/NTC-fb-logo3.jpg',
   },
 ];
 
@@ -86,9 +90,9 @@ const IndexPage = () => (
         <section>
           <Directors />
         </section>
-        <section>
+        {/* <section>
           <FrontPageContent />
-        </section>
+        </section> */}
       </Layout>
 
     )

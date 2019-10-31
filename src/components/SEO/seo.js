@@ -5,9 +5,6 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const SEO = ({ seo, videoimage }) => (
 
-  // pass the video image in here
-
-
   <StaticQuery
     query={graphql`
       {

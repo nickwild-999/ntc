@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 import { Link, scroller } from 'react-scroll';
+import styled from 'styled-components';
 
 import casting from '../images/hero/Casting.svg';
 import commercials from '../images/hero/Commercials.svg';
 import film from '../images/hero/Film.svg';
 import isourthing from '../images/hero/IsOurThing.svg';
+import DownArrow from '../images/hero/downarrow.svg';
+
 
 const slides = [
   { id: 0, image: <img src={casting} alt="cast - Nicci Topping Casting - Casting Is Our Thing" /> },
@@ -13,6 +16,16 @@ const slides = [
   { id: 2, image: <img src={film} alt="Coms - Nicci Topping Casting - Casting Is Our Thing" /> },
 
 ];
+
+
+const DownArrowWrapper = styled(Link)`
+        align-self: center;
+        color: black;
+        cursor: pointer;
+        padding-bottom: 30px;
+        text-align: center;
+`;
+
 
 const MainHero = () => {
   const [index, set] = useState(0);
@@ -65,7 +78,7 @@ const MainHero = () => {
           alt="test"
         />
       </div>
-      <Link
+      {/* <Link
         activeClass="active"
         to="showreel"
         smooth="true"
@@ -73,7 +86,15 @@ const MainHero = () => {
         style={{ alignSelf: 'center' }}
       >
       More
-      </Link>
+      </Link> */}
+      <DownArrowWrapper activeClass="active" to="showreel" smooth="true" duration={500}>
+        MORE
+        <img
+          src={DownArrow}
+          alt="Down Arrow"
+          style={{ maxWidth: '80%', alignSelf: 'center' }}
+        />
+      </DownArrowWrapper>
     </div>
 
 

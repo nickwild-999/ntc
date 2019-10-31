@@ -158,12 +158,12 @@ const Navbar = class extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        <Link
+                        <a href="https://niccitopping.com"
                         className="navbar-item"
-                        to="/blog"
+                        target="_blank"
                         >
                             Blog
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

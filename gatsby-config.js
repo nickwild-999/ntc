@@ -28,8 +28,7 @@ module.exports = {
     author: {
       name: 'Nicci Topping',
       minibio: `
-        This bio is shown at the bottom of each blog post. It supports
-        <strong>custom HTML</strong> if you’re into that sort of thing.
+      Nicci Topping CDA, CSA is one of Europe's leading casting directors  
       `,
     },
     organization: {
@@ -41,12 +40,6 @@ module.exports = {
       twitter: '@niccitopping',
       fbAppID: '',
     },
-    categories: [
-      {
-        slug: 'test',
-        name: 'Test Category',
-      },
-    ],
   },
   plugins: [
     {
