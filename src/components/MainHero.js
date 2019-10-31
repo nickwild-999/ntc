@@ -77,15 +77,7 @@ const MainHero = () => {
           alt="test"
         />
       </div>
-      {/* <Link
-        activeClass="active"
-        to="showreel"
-        smooth="true"
-        duration={500}
-        style={{ alignSelf: 'center' }}
-      >
-      More
-      </Link> */}
+
       <DownArrowWrapper activeClass="active" to="showreel" smooth="true" duration={500}>
         <img
           src={DownArrow}
