@@ -77,8 +77,16 @@ const MainHero = () => {
           alt="test"
         />
       </div>
-G
-      <DownArrowWrapper activeClass="active" to="showreel" smooth="true" duration={500}>
+      <DownArrowWrapper
+        activeClass="active"
+        to="showreel"
+        smooth="true"
+        duration={500}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         <img
           src={DownArrow}
           alt="Down Arrow"
