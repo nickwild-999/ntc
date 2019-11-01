@@ -13,6 +13,7 @@ const FrontPageVideo = () => (
       <ReactPlayer
         url="https://vimeo.com/369889988"
         className="react-player-fp"
+        light
       />
     </div>
     <div
