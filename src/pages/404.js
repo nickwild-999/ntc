@@ -11,9 +11,11 @@ padding-top:200px;
 
 const NotFoundPage = () => (
   <Layout>
-    <fourWrapper>
+    <fourWrapper
+      style={{ paddingTop: '200px' }}
+    >
       <h1>404 NOT FOUND</h1>
-      <p>Alas dear heart. That page doesn&#39;t exist... Ohhh! the sadness.</p>
+      <p>Alas poor webpage, it has shuffled off its mortal code.  Ohhh, the sadness! </p>
     </fourWrapper>
   </Layout>
 );

@@ -10,7 +10,6 @@ const FrontPageVideo = () => (
         paddingBottom: '20px',
       }}
     >
-
       <ReactPlayer
         url="https://vimeo.com/369889988"
         className="react-player-fp"
@@ -26,7 +25,7 @@ const FrontPageVideo = () => (
       <p>
         Commercials. Feature Films. TV. Stills. Street Casting
       </p>
-        It’s our passion. It’s our thing!
+      It’s our passion. It’s our thing!
     </div>
   </>
 );

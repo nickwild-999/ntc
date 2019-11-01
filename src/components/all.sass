@@ -36,7 +36,7 @@ $navbar-height: 1rem;
 
   +mobile
     --navbar-bg: white!important
-  
+
   +tablet
     //--navbar-bg: white!important
      --navbar-bg: #ffffffaa!important
@@ -50,7 +50,9 @@ $navbar-height: 1rem;
   background-color: var(--navbar-menu-bg)!important
 
   +mobile
-    --navbar-menu-bg: white!important
+    // --navbar-menu-bg: white!important
+    --navbar-menu-bg: #ffffffee!important
+
   
   +tablet
     //--navbar-menu-bg: white!important
@@ -72,6 +74,8 @@ $navbar-height: 1rem;
 
 .navbar-burger
   padding-right:60px!important
+  height:2rem !important
+  width: 2rem  !important   
 
 // main images etc
 
@@ -83,7 +87,7 @@ $navbar-height: 1rem;
 .Site-content
   flex: 1
   +mobile
-    //padding-top: 80px!important
+    padding-top: 80px!important
 
   +tablet
     //padding-top: 80px!important
@@ -147,8 +151,8 @@ h2
 
 
 .player-wrapper 
-  position: relative !important
-  padding-top: 56.25% !important /* Player ratio: 100 / (1280 / 720) */
+    position: relative !important
+    padding-top: 56.25% !important /* Player ratio: 100 / (1280 / 720) */
 
 
 .react-player
@@ -157,10 +161,13 @@ h2
   left: 0!important
 
 
+
 .react-player-fp
   +mobile
     width: 320px!important
-    padding-top: 56.25% !important /* Player ratio: 100 / (1280 / 720) */
+    height: 180px !important
+
+    // padding-top: 56.25% !important /* Player ratio: 100 / (1280 / 720) */
 
 
 .footer-text
