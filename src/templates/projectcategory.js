@@ -31,7 +31,6 @@ const ProjectCategory = (props) => {
         <ReactPlayer
           url="https://vimeo.com/369889988"
           className="react-player-fp"
-          light
         />
       </div>
     );
@@ -47,9 +46,8 @@ const ProjectCategory = (props) => {
         }}
       >
         <ReactPlayer
-          url="https://vimeo.com/365292665/14521dedaa"
+          url="https://vimeo.com/369891463"
           className="react-player-fp"
-          light
         />
       </div>
     );
