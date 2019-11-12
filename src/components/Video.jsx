@@ -19,14 +19,12 @@ const Videov = ({
   //   // mozallowfullscreen="true"
   //   // allowFullScreen
   // />
-  <div style={{ height: '600px !important' }}>
+  <div>
 
     <iframe
-      width="80%"
+      src="https://player.vimeo.com/video/369889988"
+      frameBorder="0"
       title={videoTitle}
-      height="615"
-      src="https://www.youtube.com/embed/v30Ml-9xsRQ"
-      allowFullScreen
     />
 
   </div>
