@@ -126,16 +126,16 @@ module.exports = {
         ],
       },
     },
-    {
-      // Removes unused css rules
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        // Activates purging in gatsby develop
-        develop: false,
-        // Purge only the main css file
-        purgeOnly: ['/all.sass'],
-      },
-    }, // must be after other CSS plugins
+    // {
+    //   // Removes unused css rules
+    //   resolve: 'gatsby-plugin-purgecss',
+    //   options: {
+    //     // Activates purging in gatsby develop
+    //     develop: false,
+    //     // Purge only the main css file
+    //     purgeOnly: ['/all.sass'],
+    //   },
+    // }, // must be after other CSS plugins
 
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
