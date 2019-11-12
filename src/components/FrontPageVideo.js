@@ -5,18 +5,21 @@ import Videov from './Video';
 
 const FrontPageVideo = () => (
   <>
-    <div
+    {/* <div
       className="container"
       style={{
         paddingBottom: '20px',
       }}
-    >
-      {/* <ReactPlayer
-        url="https://vimeo.com/369889988"
-        className="react-player-fp"
-      /> */}
-      <Videov />
-    </div>
+    > */}
+    {/* <ReactPlayer
+          url="https://www.youtube.com/watch?v=CCzzaDwUuDk"
+          className="react-player-fp"
+          width="100%"
+          height="100%"
+        /> */}
+    <Videov />
+    {/* Videov works but is too small */}
+    {/* </div> */}
     <div
       className="front-page-text container"
       style={{ paddingBottom: '100px' }}

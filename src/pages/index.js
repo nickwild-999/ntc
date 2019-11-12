@@ -9,6 +9,7 @@ import FrontPageContent from '../components/FrontPageContent';
 import FrontPageVideo from '../components/FrontPageVideo';
 import Testimonials from '../components/Testimonials';
 import Directors from '../components/Directors';
+import Videov from '../components/Video';
 
 
 const INDEXPAGE_QUERY = graphql`
