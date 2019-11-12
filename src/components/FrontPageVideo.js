@@ -11,11 +11,11 @@ const FrontPageVideo = () => (
         paddingBottom: '20px',
       }}
     >
-      {/* <ReactPlayer
+      <ReactPlayer
         url="https://vimeo.com/369889988"
         className="react-player-fp"
-      /> */}
-      <Videov />
+      />
+      {/* <Videov /> */}
     </div>
     <div
       className="front-page-text container"

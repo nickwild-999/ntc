@@ -24,7 +24,10 @@ const Videov = ({
     <iframe
       src="https://player.vimeo.com/video/369889988"
       frameBorder="0"
+      width="1024"
+      height="800"
       title={videoTitle}
+      // style={{ height: '800px!important' }}
     />
 
   </div>

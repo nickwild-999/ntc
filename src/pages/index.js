@@ -79,7 +79,7 @@ const IndexPage = () => (
         </section>
         <section
           id="showreel"
-          className="hero is-fullheight"
+          // className="hero is-fullheight"
           style={{ backgroundColor: '#d5cfe1', paddingTop: '150px' }}
         >
           <FrontPageVideo />
