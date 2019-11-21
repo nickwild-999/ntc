@@ -7,9 +7,14 @@ import { useWindowSize } from './hooks/useWindowSize';
 const FrontPageVideo = () => {
   const size = useWindowSize();
   const videoWidth = size.width < 569 ? 300 : 680;
-  const videoSize = { width: videoWidth, height: videoWidth / 1.7 };
+  const videoSize = { width: `${videoWidth}px`, height: `${videoWidth / 1.7}px` };
   return (
     <>
+      <div style={{ color: 'blue' }}>
+        {size.width}
+        {videoWidth}
+        {videoSize}
+      </div>
       <div
         className="container"
         style={{
@@ -18,7 +23,7 @@ const FrontPageVideo = () => {
         }}
       >
         <Videov
-          size={videoSize}
+          vSize={videoSize}
           videoSrcURL="https://player.vimeo.com/video/369889988"
           // videoSrcURL="https://player.vimeo.com/video/244384598"
 

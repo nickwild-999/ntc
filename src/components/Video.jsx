@@ -2,9 +2,9 @@ import React from 'react';
 
 
 const Videov = ({
-  videoSrcURL, videoTitle, size, ...props
+  videoSrcURL, videoTitle, vSize, ...props
 }) => (
-  <div style={{ height: '100%' }}>
+  <div>
     <iframe
       style={size}
       src={videoSrcURL}
