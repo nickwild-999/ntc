@@ -1,15 +1,10 @@
 @import "~bulma/sass/utilities/initial-variables"
 @import "~bulma/sass/utilities/mixins"
-@import "~rfs/sass";
+@import "~rfs/sass"
 
-
-
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,700,900&display=swap')
 $family-sans-serif: 'Muli', sans-serif
 //font-family: $family-sans-serif
-
-  
-
 
 // Config vars
 $kaldi-red: #FD461E
@@ -28,12 +23,9 @@ $link-hover: $white
 $scheme-main: $black
 $scheme-invert: $white
 
-
-
-
-// NAV BAR  
+// NAV BAR
 $navbar-item-color: $primary
-$navbar-height: 1rem;
+$navbar-height: 1rem
 
 .navbar
   background-color: var(--navbar-bg)!important
@@ -43,12 +35,11 @@ $navbar-height: 1rem;
 
   +tablet
     //--navbar-bg: white!important
-     --navbar-bg: #ffffffaa!important
-
-  +desktop
-    //--navbar-bg: #952b85B0!important 
     --navbar-bg: #ffffffaa!important
 
+  +desktop
+    //--navbar-bg: #952b85B0!important
+    --navbar-bg: #ffffffaa!important
 
 .navbar-menu
   background-color: var(--navbar-menu-bg)!important
@@ -57,7 +48,6 @@ $navbar-height: 1rem;
     // --navbar-menu-bg: white!important
     --navbar-menu-bg: #ffffffee!important
 
-  
   +tablet
     //--navbar-menu-bg: white!important
     --navbar-menu-bg: #ffffffee!important
@@ -65,7 +55,7 @@ $navbar-height: 1rem;
   +desktop
     --navbar-menu-bg: #ffffff00!important
 
-.navbar-item img 
+.navbar-item img
   +mobile
     max-height: 3.2rem !important
 
@@ -75,15 +65,14 @@ $navbar-height: 1rem;
   +desktop
     max-height: 4rem !important
 
-
 .navbar-burger
-  padding-right:60px!important
-  height:2rem !important
-  width: 2rem  !important   
+  padding-right: 60px!important
+  height: 2rem !important
+  width: 2rem  !important
 
 // main images etc
 
-.Site 
+.Site
   display: flex
   min-height: 100vh
   flex-direction: column
@@ -115,7 +104,7 @@ $navbar-height: 1rem;
     margin-top: 0
 
 .pagination .navbar
-	justify-content: center
+  justify-content: center
 
 // Helper Classes
 .full-width-image-container
@@ -138,11 +127,10 @@ $navbar-height: 1rem;
   border-radius: 0px 0px 8px 8px
 
 .card-header-title
-     border-radius: 8px 8px 0px 0px
+  border-radius: 8px 8px 0px 0px
 
-h1 
+h1
   font-family: "Montserrat"
-
 
 h2
   font-size: 2rem!important
@@ -150,21 +138,17 @@ h2
   font-variant-caps: small-caps
   color: $primary
 
-.react-player iframe 
+.react-player iframe
   height: 100% !important
 
-
-.player-wrapper 
-    position: relative !important
-    padding-top: 56.25% !important /* Player ratio: 100 / (1280 / 720) */
-
+.player-wrapper
+  position: relative !important
+  padding-top: 56.25% !important /* Player ratio: 100 / (1280 / 720) */
 
 .react-player
   position: absolute!important
   top: 0!important
   left: 0!important
-
-
 
 .react-player-fp
   +mobile
@@ -172,7 +156,6 @@ h2
     height: 180px !important
 
     // padding-top: 56.25% !important /* Player ratio: 100 / (1280 / 720) */
-
 
 .footer-text
   p
@@ -189,7 +172,7 @@ h2
   text-overflow: ellipsis!important
   white-space: nowrap!important
   display: block!important
-  
+
 .scaleup
   zoom: 1.0
   -moz-transform: scale(1.0)
@@ -197,9 +180,9 @@ h2
 .testimonial-card
   border-radius: 8px 8px 8px 8px
 
-.blockquote 
+.blockquote
   padding-left: 60px!important
-  p:first-child:before 
+  p:first-child:before
     content: '\201C'
     color: #ffffff
     font-size: 4.5em
@@ -215,8 +198,8 @@ h2
 .mainhero-wrapper
   display: flex
   flex-direction: column
-  justify-content:center
-  
+  justify-content: center
+
   +mobile
     padding-left: 50px
     padding-right: 50px
@@ -225,7 +208,7 @@ h2
   +tablet
     padding-left: 270px
     padding-right: 270px
-    padding-top: 200px  
+    padding-top: 200px
 
   +desktop
     padding-left: 270px
@@ -233,7 +216,7 @@ h2
     padding-top: 250px
 
 .mainhero-inner
-  
+
   +tablet
     padding-bottom: 70px
 
@@ -241,7 +224,7 @@ h2
     padding-bottom: 70px
 
   +desktop
-    padding-bottom: 100px 
+    padding-bottom: 100px
 
 .front-page-text
   @include  font-size(2rem)
@@ -252,27 +235,28 @@ h2
     margin-right: 100px
 
   +mobile
-    margin-left: 20px!important
-    margin-right: 20px!important
+    margin-left: 30px!important
+    margin-right: 30px!important
+    font-size: 1.2rem
     p
-      padding-bottom: 12px
-      
+      padding-bottom: 5px
+      padding-top: 10px
+
 .showreel
   display: flex
   justify-content: center
 
-.imagegrid 
+.imagegrid
   display: flex
   +mobile
     height: 550px
 
-  
   +mobile
     flex-direction: column
 
 .imagegrid-item
   // background-color: yellow
-  
+
   border: 2px solid goldenrod
   height: 250px
   +tablet
@@ -284,13 +268,10 @@ h2
   +mobile
     flex: 1 10 20px
 
-  transition: flex-grow 0.3s ease
-   
+    transition: flex-grow 0.3s ease
+
   .item1
     background-image: url('/images/DustyMe.jpg')
-
-
-
 
 .category-header
   padding-top: 24px
@@ -304,7 +285,7 @@ h2
   +mobile
     font-size: 2rem !important
     text-align: center
-    
+
 .category-description
   font-size: 1.3rem
 
@@ -317,18 +298,20 @@ h2
   &:hover > span
     opacity: 0.5
 
-.directors-wrapper > span 
-  &:hover    
+.directors-wrapper > span
+  &:hover
     color: purple
     font-weight: 700
     opacity: 1
-    
 
 .directors-name
   margin: 15px
-  
 
-
-
+.frontpage-video
+  background-color: #d5cfe1
+  +desktop
+    padding-top: 175px
+  +mobile
+    padding-top: 125px
 
 @import "~bulma"
