@@ -6,7 +6,7 @@ import { useWindowSize } from './hooks/useWindowSize';
 
 const FrontPageVideo = () => {
   const size = useWindowSize();
-  const videoWidth = size.width < 569 ? 320 : 680;
+  const videoWidth = size.width < 569 ? 300 : 680;
   const videoSize = { width: videoWidth, height: videoWidth / 1.7 };
   return (
     <>

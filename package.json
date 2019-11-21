@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-wordpress",
-  "description": "Gatsby v2 starter for WordPress",
+  "name": "nicctopping-casting-gatsby",
+  "description": "Based on Lewis Gatsby v2 starter for WordPress",
   "version": "0.1.0",
   "author": "Nick Wild",
   "dependencies": {
