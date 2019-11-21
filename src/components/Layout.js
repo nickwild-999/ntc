@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
-// import './all.sass';
+import './all.sass';
 
 const TemplateWrapper = ({ children }) => (
   <div className="Site">

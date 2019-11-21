@@ -2,11 +2,15 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
+import Videov from '../components/Video';
+
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO/seo'; // ADD THIS IN
 import ProjectList from '../components/ProjectList';
+import { useWindowSize } from '../components/hooks/useWindowSize';
+
 
 const ProjectCategory = (props) => {
   const { data, pageContext } = props;
@@ -15,6 +19,10 @@ const ProjectCategory = (props) => {
   const { node: imageheader } = data.allCategoryheadersJson.edges[0];
   const { name: category, slug } = pageContext;
   const { node: category2 } = data.allWordpressWpProjectCategories.edges[0];
+
+  const size = useWindowSize();
+  const videoWidth = size.width < 569 ? 320 : 680;
+  const videoSize = { width: videoWidth, height: videoWidth / 1.7 };
 
   let video = '';
   if (slug === 'commercials') {
@@ -28,9 +36,9 @@ const ProjectCategory = (props) => {
           justifyContent: 'center',
         }}
       >
-        <ReactPlayer
-          url="https://vimeo.com/369889988"
-          className="react-player-fp"
+        <Videov
+          videoSrcURL="https://www.youtube.com/embed/1tUxZF0crPk"
+          size={videoSize}
         />
       </div>
     );
@@ -45,9 +53,9 @@ const ProjectCategory = (props) => {
           justifyContent: 'center',
         }}
       >
-        <ReactPlayer
-          url="https://vimeo.com/369891463"
-          className="react-player-fp"
+        <Videov
+          videoSrcURL="https://www.youtube.com/embed/eM-ZdNnG9_A"
+          size={videoSize}
         />
       </div>
     );

@@ -1,38 +1,43 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import Videov from './Video';
+import { useWindowSize } from './hooks/useWindowSize';
 
 
-const FrontPageVideo = () => (
-  <>
-    {/* <div
-      className="container"
-      style={{
-        paddingBottom: '20px',
-      }}
-    > */}
-    {/* <ReactPlayer
-          url="https://www.youtube.com/watch?v=CCzzaDwUuDk"
-          className="react-player-fp"
-          width="100%"
-          height="100%"
-        /> */}
-    <Videov />
-    {/* Videov works but is too small */}
-    {/* </div> */}
-    <div
-      className="front-page-text container"
-      style={{ paddingBottom: '100px' }}
-    >
-      <p>
-        We have been casting projects for over 20 years in the UK, Europe and USA.
-      </p>
-      <p>
-        Commercials. Feature Films. TV. Stills. Street Casting
-      </p>
-      It’s our passion. It’s our thing!
-    </div>
-  </>
-);
+const FrontPageVideo = () => {
+  const size = useWindowSize();
+  const videoWidth = size.width < 569 ? 320 : 680;
+  const videoSize = { width: videoWidth, height: videoWidth / 1.7 };
+  return (
+    <>
+      <div
+        className="container"
+        style={{
+          paddingBottom: '10px',
+          textAlign: 'center',
+        }}
+      >
+        <Videov
+          size={videoSize}
+          videoSrcURL="https://www.youtube.com/embed/1tUxZF0crPk"
+          // videoSrcURL="https://player.vimeo.com/video/244384598"
+
+        />
+        <div
+          className="front-page-text container"
+          style={{ paddingBottom: '100px' }}
+        >
+          <p>
+            We have been casting projects for over 20 years in the UK, Europe and USA.
+          </p>
+          <p>
+            Commercials. Feature Films. TV. Stills. Street Casting
+          </p>
+          It’s our passion. It’s our thing!
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default FrontPageVideo;
