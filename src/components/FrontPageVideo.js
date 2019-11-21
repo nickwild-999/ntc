@@ -19,7 +19,7 @@ const FrontPageVideo = () => {
       >
         <Videov
           size={videoSize}
-          videoSrcURL="https://www.youtube.com/embed/1tUxZF0crPk"
+          videoSrcURL="https://player.vimeo.com/video/369889988"
           // videoSrcURL="https://player.vimeo.com/video/244384598"
 
         />

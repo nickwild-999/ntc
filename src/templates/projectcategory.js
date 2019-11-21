@@ -37,7 +37,7 @@ const ProjectCategory = (props) => {
         }}
       >
         <Videov
-          videoSrcURL="https://www.youtube.com/embed/1tUxZF0crPk"
+          videoSrcURL="https://player.vimeo.com/video/369889988"
           size={videoSize}
         />
       </div>
@@ -54,7 +54,7 @@ const ProjectCategory = (props) => {
         }}
       >
         <Videov
-          videoSrcURL="https://www.youtube.com/embed/eM-ZdNnG9_A"
+          videoSrcURL="https://player.vimeo.com/video/369891463"
           size={videoSize}
         />
       </div>
