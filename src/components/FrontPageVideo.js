@@ -9,20 +9,36 @@ const FrontPageVideo = () => {
   return (
     <>
       <div style={{ color: 'blue' }}>
-        {size.width}
-        {videoWidth}
+        {/* {size.width}
+        {videoWidth} */}
       </div>
       <div
         className="container"
         style={{
           paddingBottom: '10px',
           textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
-        <Videov
-          vWidth={videoWidth}
-          videoSrcURL="https://www.youtube.com/embed/eM-ZdNnG9_A"
-        />
+
+        <div className="vimeo-wrapper">
+          <Videov
+            // vWidth={videoWidth}
+            // videoSrcURL="https://www.youtube.com/embed/eM-ZdNnG9_A"
+            videoSrcURL="https://player.vimeo.com/video/369889988"
+          />
+
+
+          {/* <ReactPlayer
+            url="https://www.youtube.com/watch?v=eM-ZdNnG9_A"
+            // url="https://vimeo.com/369889988"
+            className="react-player"
+            width="100%"
+            height="100%"
+          /> */}
+        </div>
         <div
           className="front-page-text container"
           style={{ paddingBottom: '100px' }}
@@ -39,5 +55,4 @@ const FrontPageVideo = () => {
     </>
   );
 };
-
 export default FrontPageVideo;

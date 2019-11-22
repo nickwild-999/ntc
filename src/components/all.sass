@@ -22,8 +22,6 @@ $custom-colors: ("secondary": ($secondary))  !default
 $footer-background-color: $black-ter
 $link: $primary
 $link-hover: $white
-// $scheme-main: $white
-// $scheme-invert: $white
 
 // NAV BAR
 $navbar-item-color: $primary
@@ -315,5 +313,13 @@ h2
     padding-top: 175px
   +mobile
     padding-top: 125px
+
+.vimeo-wrapper
+  +desktop
+    width: 800px
+    height: 600px
+  +mobile
+    width: 300px
+    height: 176px
 
 @import "~bulma"
