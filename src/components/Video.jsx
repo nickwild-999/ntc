@@ -2,13 +2,14 @@ import React from 'react';
 
 
 const Videov = ({
-  videoSrcURL, videoTitle, vSize, ...props
+  videoSrcURL, videoTitle, vWidth, vSize, ...props
 }) => {
-  console.log(vSize);
+  console.log(vWidth);
   return (
     <div>
       <iframe
-        style={vSize}
+        width={vWidth}
+        height={Math.round(vWidth / 1.7)}
         src={videoSrcURL}
         title={videoTitle}
         frameBorder="0"
@@ -21,5 +22,4 @@ const Videov = ({
     </div>
   );
 };
-
 export default Videov;

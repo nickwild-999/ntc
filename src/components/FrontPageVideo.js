@@ -3,12 +3,9 @@ import ReactPlayer from 'react-player';
 import Videov from './Video';
 import { useWindowSize } from './hooks/useWindowSize';
 
-
 const FrontPageVideo = () => {
   const size = useWindowSize();
   const videoWidth = size.width < 569 ? 300 : 680;
-  const videoSize = { width: `${videoWidth}px`, height: `${Math.round(videoWidth / 1.7)}px` };
-  // const videoSize = { width: '350px', height: '200px' };
   return (
     <>
       <div style={{ color: 'blue' }}>
@@ -23,10 +20,8 @@ const FrontPageVideo = () => {
         }}
       >
         <Videov
-          vSize={videoSize}
-          videoSrcURL="https://player.vimeo.com/video/369889988"
-          // videoSrcURL="https://player.vimeo.com/video/244384598"
-
+          vWidth={videoWidth}
+          videoSrcURL="https://www.youtube.com/embed/eM-ZdNnG9_A"
         />
         <div
           className="front-page-text container"
