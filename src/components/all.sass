@@ -292,20 +292,44 @@ h2
 .category-image
   +mobile
 
-.directors-wrapper
-  margin: 70px
-  font-size: 1.5rem
-  &:hover > span
-    opacity: 0.5
+// .directors-wrapper
+//   margin: 70px
+//   font-size: 1.5rem
+//   &:hover > span
+//     opacity: 0.5
 
-.directors-wrapper > span
-  &:hover
-    color: purple
+// .directors-wrapper > span
+//   &:hover
+//     color: purple
+//     font-weight: 700
+//     opacity: 1
+
+.directors-wrapper2
+  display: grid
+  padding-top: 30px
+  padding-bottom: 30px
+
+  +mobile
+    grid-template-columns: auto auto
+    padding-left: 30px
     font-weight: 700
-    opacity: 1
+
+  +tablet
+    grid-template-columns: auto auto auto
+    padding-left: 60px
+    padding-right: 60px
+    font-size: 1.5rem
+    font-weight: 700
+
+  +desktop
+    grid-template-columns: auto auto auto
+
+  +fullhd
+    grid-template-columns: auto auto auto auto
 
 .directors-name
-  margin: 15px
+  // margin: 15px
+  margin-bottom: 10px
 
 .frontpage-video
   background-color: #d5cfe1
