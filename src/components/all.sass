@@ -20,11 +20,11 @@ $secondary: rgba($purple,.5)
 $custom-colors: ("secondary": ($secondary))  !default
 
 $footer-background-color: $black-ter
-$link: $primary
+// $link: $primary
 $link-hover: $white
 
 // NAV BAR
-$navbar-item-color: $primary
+// $navbar-item-color: $primary
 $navbar-height: 1rem
 
 .navbar
@@ -38,8 +38,8 @@ $navbar-height: 1rem
     --navbar-bg: #ffffffaa!important
 
   +desktop
-    //--navbar-bg: #952b85B0!important
-    --navbar-bg: #ffffffaa!important
+    --navbar-bg: #952b8570!important
+    //--navbar-bg: #ffffffaa!important
 
 .navbar-menu
   background-color: var(--navbar-menu-bg)!important
@@ -64,6 +64,29 @@ $navbar-height: 1rem
 
   +desktop
     max-height: 4rem !important
+
+.navbar-item
+  +mobile
+    color: $primary !important
+
+  +tablet
+    color: white !important
+
+  +desktop
+    color: white !important
+
+.navbar-dropdown .navbar-item
+  color: $primary !important
+
+.navbar-link
+  +mobile
+    color: $primary !important
+
+  +tablet
+    color: white !important
+
+  +desktop
+    color: white !important
 
 .navbar-burger
   padding-right: 60px!important
@@ -124,10 +147,11 @@ $navbar-height: 1rem
   margin-top: 0 !important
 
 .card
-  border-radius: 0px 0px 8px 8px
+  border-radius: 8px 8px 8px 8px
 
 .card-header-title
   border-radius: 8px 8px 0px 0px
+  background-color: $purple !important
 
 h1
   font-family: "Montserrat"

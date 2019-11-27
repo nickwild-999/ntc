@@ -36,10 +36,11 @@ const ProjectCategory = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Videov
-          videoSrcURL="https://player.vimeo.com/video/369889988"
-          size={videoSize}
-        />
+        <div className="vimeo-wrapper">
+          <Videov
+            videoSrcURL="https://player.vimeo.com/video/369889988"
+          />
+        </div>
       </div>
     );
   } else if (slug === 'feature-films') {
@@ -53,10 +54,12 @@ const ProjectCategory = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Videov
-          videoSrcURL="https://player.vimeo.com/video/369891463"
-          size={videoSize}
-        />
+        <div className="vimeo-wrapper">
+          <Videov
+            videoSrcURL="https://player.vimeo.com/video/369891463"
+            size={videoSize}
+          />
+        </div>
       </div>
     );
   } else {

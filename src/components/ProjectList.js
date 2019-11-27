@@ -49,7 +49,7 @@ const ProjectList = (props) => {
                   }}
                 >
                   <div className="card-header ">
-                    <div className="card-header-title has-background-primary has-text-white is-text-overflow">
+                    <div className="card-header-title  has-text-white is-text-overflow">
                       {htmlEntities.decode(project.title)}
                     </div>
 

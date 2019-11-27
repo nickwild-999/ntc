@@ -81,7 +81,7 @@ const IndexPage = () => (
         <section
           id="showreel"
           // className="hero is-fullheight frontpage-video"
-          className="frontpage-video"
+          className="front-page-video"
         >
           <FrontPageVideo />
         </section>
