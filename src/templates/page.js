@@ -1,28 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import parse, { domToReact } from 'html-react-parser';
+
 import Layout from '../components/Layout';
 import SEO from '../components/SEO/seo';
 
-export const PageTemplate = ({ title, content }) => (
-  <section className="section section--gradient">
-    <div className="container">
-      <div className="columns">
-        <div className="column is-10 is-offset-1">
-          <div className="section">
-            <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-              {title}
-            </h2>
-            <div
-              className="content"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
+
+export const PageTemplate = ({ title, content }) => {
+  const myContent = parse(content);
+
+
+  return (
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="section">
+              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+                {title}
+              </h2>
+              {/* <div
+                className="about-wrapper"
+                dangerouslySetInnerHTML={{ __html: content }}
+              /> */}
+              {/* <div className="about-wrapper"> */}
+              <div>{myContent}</div>
+              {/* </div> */}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 PageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
