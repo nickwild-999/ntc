@@ -70,7 +70,7 @@ const ProjectCategory = (props) => {
   return (
     <Layout>
       <Helmet title={`${category} | ${siteTitle}`} />
-      {/* add an seo for categories that pulls from the header image */}
+      {/* <SEO /> */}
       <div className="category-image">
         <Img fluid={imageheader.image.childImageSharp.fluid} />
       </div>
