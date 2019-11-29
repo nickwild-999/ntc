@@ -12,21 +12,13 @@ export const PageTemplate = ({ title, content }) => {
 
 
   return (
-    <section className="section section--gradient">
+    <section className="section section--gradient section-about">
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              {/* <div
-                className="about-wrapper"
-                dangerouslySetInnerHTML={{ __html: content }}
-              /> */}
-              {/* <div className="about-wrapper"> */}
+            <div className="section section-about">
+              <h1 className="category-title about-title">{title}</h1>
               <div>{myContent}</div>
-              {/* </div> */}
             </div>
           </div>
         </div>

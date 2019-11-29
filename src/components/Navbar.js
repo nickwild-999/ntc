@@ -164,6 +164,12 @@ const Navbar = class extends React.Component {
                         >
                             Blog
                         </a>
+                        <Link
+                        className="navbar-item"
+                        to="/about"
+                        >
+                            About
+                        </Link>
                     </div>
                 </div>
             </div>
