@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import parse, { domToReact } from 'html-react-parser';
+import parse from 'html-react-parser';
+import MyImage from '../components/GatsbyImage';
+
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO/seo';
@@ -18,7 +20,12 @@ export const PageTemplate = ({ title, content }) => {
           <div className="column is-10 is-offset-1">
             <div className="section section-about">
               <h1 className="category-title about-title">{title}</h1>
-              <div>{myContent}</div>
+              <div className="about-wrapper">
+                <div className="about-image">
+                  <MyImage imgName="nicci_topping_portrait.jpg" />
+                </div>
+                {myContent}
+              </div>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ const MyImage = ({ imgName }) => (
         edge => edge.node.fluid.originalName === imgName,
       );
       if (!image) {
-        return null;
+        return (<div>cant find</div>);
       }
       return (<Img fluid={image.node.fluid} />);
     }}
