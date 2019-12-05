@@ -40,7 +40,7 @@ const indexmeta = [
   },
   {
     property: 'og:image',
-    content: 'https://infallible-mcnulty-753e25.netlify.com/NTC-fb-logo3.jpg',
+    content: 'https://casting.niccitopping.com/NTC-fb-logo3.jpg',
   },
   {
     property: 'og:type',
@@ -64,7 +64,7 @@ const indexmeta = [
   },
   {
     name: 'twitter:image',
-    content: 'https://infallible-mcnulty-753e25.netlify.com/NTC-fb-logo3.jpg',
+    content: 'https://casting.niccitopping.com/NTC-fb-logo3.jpg',
   },
 ];
 
