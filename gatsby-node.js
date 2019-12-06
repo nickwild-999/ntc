@@ -93,13 +93,13 @@ exports.createPages = ({ actions, graphql }) => {
       });
 
       // Create a paginated blog, e.g., /, /page/2, /page/3
-      paginate({
-        createPage,
-        items: posts,
-        itemsPerPage: 10,
-        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/blog' : '/blog/page'),
-        component: blogTemplate,
-      });
+      // paginate({
+      //   createPage,
+      //   items: posts,
+      //   itemsPerPage: 10,
+      //   pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/blog/' : '/blog/page'),
+      //   component: blogTemplate,
+      // });
     })
 
     // projects now
