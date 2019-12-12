@@ -392,10 +392,13 @@ h2
     flex-basis: 35% !important
 
   +desktop
-    flex-basis: 35% !important
+    flex-basis: 30% !important
+
+  +widescreen
+    flex-basis: 23% !important
 
   +fullhd
-    flex-basis: 30% !important
+    flex-basis: 23% !important
 
 .about-head
   +mobile
@@ -427,7 +430,7 @@ h2
   +fullhd
     flex-basis: 70% !important
     font-size: 1.4rem !important
-    line-height: 1.2 !important
+    line-height: 1.25 !important
 
 .about-body
   +mobile
@@ -448,6 +451,7 @@ h2
   +desktop
     font-size: 1.1rem !important
     line-height: 1.25 !important
+    padding-top: 10px !important
     margin-bottom: 20px !important
     p
       margin-bottom: 10px !important
@@ -473,5 +477,15 @@ h2
 .section-about
   +mobile
     padding-top: 10px !important
+
+.about-bullet
+  list-style-position: outside
+  list-style-type: circle
+  padding-left: 50px
+  padding-bottom: 20px
+  color: $primary
+  font-weight: 500
+  li
+    padding-bottom: 5px
 
 @import "~bulma"
