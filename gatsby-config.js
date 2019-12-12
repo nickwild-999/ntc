@@ -163,7 +163,7 @@ module.exports = {
       options: {
         // Activates purging in gatsby develop
         develop: false,
-        whitelist: ['about-head', 'about-image', 'about-body', 'about-wrapper'],
+        whitelist: ['about-head', 'about-image', 'about-body', 'about-wrapper', 'about-bullet'],
         // Purge only the main css file
         purgeOnly: ['/all.sass'],
       },
