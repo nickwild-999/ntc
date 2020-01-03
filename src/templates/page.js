@@ -34,39 +34,39 @@ export const PageTemplate = ({ title, content }) => {
   );
 };
 
-PageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  seo: PropTypes.shape({
-    yoast_wpseo_title: PropTypes.string,
-    yoast_wpseo_metadesc: PropTypes.string,
-    yoast_wpseo_canonical: PropTypes.string,
-    yoast_wpseo_facebook_title: PropTypes.string,
-    yoast_wpseo_facebook_description: PropTypes.string,
-    yoast_wpseo_facebook_image: PropTypes.shape({
-      id: PropTypes.string,
-      link: PropTypes.string,
-    }),
-    yoast_wpseo_twitter_title: PropTypes.string,
-    yoast_wpseo_twitter_description: PropTypes.string,
-  }),
-};
+// PageTemplate.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   content: PropTypes.string,
+//   seo: PropTypes.shape({
+//     yoast_wpseo_title: PropTypes.string,
+//     yoast_wpseo_metadesc: PropTypes.string,
+//     yoast_wpseo_canonical: PropTypes.string,
+//     yoast_wpseo_facebook_title: PropTypes.string,
+//     yoast_wpseo_facebook_description: PropTypes.string,
+//     yoast_wpseo_facebook_image: PropTypes.shape({
+//       id: PropTypes.string,
+//       link: PropTypes.string,
+//     }),
+//     yoast_wpseo_twitter_title: PropTypes.string,
+//     yoast_wpseo_twitter_description: PropTypes.string,
+//   }),
+// };
 
-SEO.propTypes = {
-  seo: PropTypes.shape({
-    yoast_wpseo_title: PropTypes.string,
-    yoast_wpseo_metadesc: PropTypes.string,
-    yoast_wpseo_canonical: PropTypes.string,
-    yoast_wpseo_facebook_title: PropTypes.string,
-    yoast_wpseo_facebook_description: PropTypes.string,
-    yoast_wpseo_facebook_image: PropTypes.shape({
-      id: PropTypes.string,
-      link: PropTypes.string,
-    }),
-    yoast_wpseo_twitter_title: PropTypes.string,
-    yoast_wpseo_twitter_description: PropTypes.string,
-  }),
-};
+// SEO.propTypes = {
+//   seo: PropTypes.shape({
+//     yoast_wpseo_title: PropTypes.string,
+//     yoast_wpseo_metadesc: PropTypes.string,
+//     yoast_wpseo_canonical: PropTypes.string,
+//     yoast_wpseo_facebook_title: PropTypes.string,
+//     yoast_wpseo_facebook_description: PropTypes.string,
+//     yoast_wpseo_facebook_image: PropTypes.shape({
+//       id: PropTypes.string,
+//       link: PropTypes.string,
+//     }),
+//     yoast_wpseo_twitter_title: PropTypes.string,
+//     yoast_wpseo_twitter_description: PropTypes.string,
+//   }),
+// };
 
 const Page = ({ data }) => {
   const { wordpressPage: page } = data;
@@ -78,9 +78,9 @@ const Page = ({ data }) => {
   );
 };
 
-Page.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+// Page.propTypes = {
+//   data: PropTypes.object.isRequired,
+// };
 
 export default Page;
 

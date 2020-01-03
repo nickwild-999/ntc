@@ -12,7 +12,7 @@ export const PageSEO = graphql`
       yoast_wpseo_facebook_description
       yoast_wpseo_twitter_title
       yoast_wpseo_twitter_description
-      yoast_wpseo_twitter_image
+      # yoast_wpseo_twitter_image
     }
   }
 `;
